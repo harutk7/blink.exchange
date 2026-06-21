@@ -44,7 +44,7 @@ export async function getTrendingTokens<TChainId extends TrendingTokensChainId>(
   if (result) {
     return result.trendingTokens.map((token) => ({
       ...token,
-      id: getIdFromChainIdAddress(variables.chainId, token.address),
+      id: getIdFromChainIdAddress(variables.chainId, token.address as AddressFor<TChainId>),
       chainId: variables.chainId,
       address: token.address as AddressFor<TChainId>,
     }))

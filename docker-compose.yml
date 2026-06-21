@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_TELEMETRY_DISABLED: 1
+        DRPC_ID: demo
+        NEXT_PUBLIC_DRPC_ID: demo
+        NEXT_PUBLIC_SUSHI_GRAPH_KEY: be60450c5c375eaa36fa6b1540047434
+        NEXT_PUBLIC_SUSHI_DATA_API_HOST: https://production.data-gcp.sushi.com
+        NEXT_PUBLIC_API_BASE_URL: https://api.sushi.com
+        EDGE_CONFIG: ""
+    container_name: blink-exchange-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      HOSTNAME: 0.0.0.0
+      NEXT_PUBLIC_DRPC_ID: demo
+      NEXT_PUBLIC_SUSHI_DATA_API_HOST: https://production.data-gcp.sushi.com
+      NEXT_PUBLIC_API_BASE_URL: https://api.sushi.com
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000 | grep -qi html || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    restart: unless-stopped

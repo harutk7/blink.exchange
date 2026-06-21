@@ -128,6 +128,27 @@ The monorepo is organized as a pnpm workspace with the following key locations:
    - The frontend build expects environment variables from `apps/web/.env` (or `.env.local`).
    - A minimal `.env` can be created by copying `.env.example`. Some features may show errors until real RPC/subgraph endpoints are configured in task 438.
 
+## Docker
+
+A root-level `Dockerfile` and `docker-compose.yml` are provided for task 437.
+
+- Build image: `docker build -t blink-exchange-frontend .`
+- Build and start: `docker compose build && docker compose up -d`
+- The frontend is exposed on port `3000`.
+- Demo environment variables are set via Docker build args / compose environment.
+
+## Build fixes applied for task 437
+
+- Moved `pnpm.overrides`, `pnpm.patchedDependencies`, and `pnpm.onlyBuiltDependencies`
+  from the ignored `pnpm` field in `package.json` to `pnpm-workspace.yaml` so pnpm 10
+  actually applies them.
+- Added `output: 'standalone'` to `apps/web/next.config.mjs` for a minimal Docker
+  production image.
+- Fixed a TypeScript error in
+  `packages/graph-client/src/subgraphs/data-api/queries/trending-tokens/trending-tokens.ts`
+  by casting `token.address` to `AddressFor<TChainId>` before passing it to
+  `getIdFromChainIdAddress`.
+
 ## Next Steps
 
 - **Task 437:** Dockerize the BLINK Exchange (Dockerfiles + `docker-compose.yml`).

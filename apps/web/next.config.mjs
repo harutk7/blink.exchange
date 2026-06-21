@@ -11,6 +11,7 @@ const bundleAnalyzer = withBundleAnalyzer({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = bundleAnalyzer({
+  output: 'standalone',
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
   poweredByHeader: false,
@@ -20,7 +21,7 @@ const nextConfig = bundleAnalyzer({
   },
   experimental: {
     staticGenerationRetryCount: 3,
-    webpackBuildWorker: true,
+    webpackBuildWorker: false,
     optimizePackageImports: [
       '@heroicons/react-v1/solid',
       '@heroicons/react-v1/outline',
