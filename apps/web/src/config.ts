@@ -1,0 +1,289 @@
+import { PoolChainIds } from '@sushiswap/graph-client/data-api'
+import { ChainId } from 'sushi'
+import {
+  AGGREGATOR_ONLY_CHAIN_IDS,
+  BLADE_SUPPORTED_CHAIN_IDS,
+  type EvmChainId,
+  type EvmTestnetChainId,
+  SUSHISWAP_SUPPORTED_CHAIN_IDS,
+  SWAP_API_SUPPORTED_CHAIN_IDS,
+  isEvmTestnetChainId,
+} from 'sushi/evm'
+import { MvmChainId } from 'sushi/mvm'
+import { StellarChainId } from 'sushi/stellar'
+import {
+  SVM_USDC,
+  SVM_USDT,
+  SvmChainId,
+  SvmToken,
+  WSOL,
+  isSvmChainId,
+  svmAddress,
+} from 'sushi/svm'
+
+export const ULTRA_ADVANCED_FEE_RECEIVER =
+  'FR7r4C5prSywpsTkd1jutJ6nxDyo25hgAkwHR6HKnNjU'
+export const ULTRA_ADVANCED_FEE_INTEGRATOR_ID = 'tyler@sushi.com'
+//@dev: ULTRA_ADVANCED_FEE_RECEIVER must have an ATA created for the fee mint to be used here, can just send a token to the address and an ATA will automatically be created
+export const ULTRA_FEE_MINT_OPTIONS = [
+  { currency: SVM_USDC[SvmChainId.SOLANA], priority: 100 },
+  { currency: SVM_USDT[SvmChainId.SOLANA], priority: 95 },
+  {
+    currency: new SvmToken({
+      address: svmAddress('JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD'),
+      name: 'Jupiter USD',
+      symbol: 'JupUSD',
+      decimals: 6,
+      chainId: SvmChainId.SOLANA,
+    }),
+    priority: 90,
+  },
+  {
+    currency: WSOL[SvmChainId.SOLANA], //fees will be sent in SOL when using WSOL
+    priority: 85,
+    shouldUseNativeForBalanceCheck: true,
+  },
+]
+
+export const SVM_UI_FEE_BIPS = 50
+export const SVM_UI_FEE_PERCENT = SVM_UI_FEE_BIPS / 100
+export const SVM_UI_FEE_DECIMAL = SVM_UI_FEE_BIPS / 10_000
+
+export const EVM_UI_FEE_BIPS = 35
+export const EVM_UI_FEE_PERCENT = EVM_UI_FEE_BIPS / 100
+export const EVM_UI_FEE_DECIMAL = EVM_UI_FEE_BIPS / 10_000
+
+export function getUiFeePercent(chainId: EvmChainId | SvmChainId) {
+  if (isSvmChainId(chainId)) {
+    return SVM_UI_FEE_PERCENT
+  }
+  return EVM_UI_FEE_PERCENT
+}
+
+export type SwapApiEnabledChainId =
+  (typeof SWAP_API_SUPPORTED_CHAIN_IDS)[number]
+export const isSwapApiEnabledChainId = (
+  chainId: number,
+): chainId is SwapApiEnabledChainId =>
+  SWAP_API_SUPPORTED_CHAIN_IDS.includes(chainId as SwapApiEnabledChainId)
+
+export const DISABLED_CHAIN_IDS = [
+  ChainId.BOBA_BNB,
+  ChainId.HARMONY,
+  ChainId.POLYGON_ZKEVM,
+  ChainId.TATARA,
+  ChainId.SEPOLIA,
+  ChainId.BOKUTO,
+] as const
+
+export const BLADE_SUPPORTED_NETWORKS = BLADE_SUPPORTED_CHAIN_IDS.filter(
+  (c) => !DISABLED_CHAIN_IDS.includes(c as (typeof DISABLED_CHAIN_IDS)[number]),
+)
+
+export const NEW_CHAIN_IDS = [] as const
+
+export const PREFERRED_CHAINID_ORDER = [
+  ChainId.ETHEREUM,
+  ChainId.BSC,
+  ChainId.BASE,
+  ChainId.ARBITRUM,
+  SvmChainId.SOLANA,
+  StellarChainId.STELLAR,
+  ChainId.POLYGON,
+  ChainId.KATANA,
+  ChainId.OPTIMISM,
+  ChainId.AVALANCHE,
+  ChainId.FILECOIN,
+  ChainId.HEMI,
+  ChainId.ROOTSTOCK,
+  ChainId.GNOSIS,
+  ChainId.ARBITRUM_NOVA,
+  ChainId.FANTOM,
+  ChainId.HAQQ,
+  ChainId.SCROLL,
+  ChainId.LINEA,
+  ChainId.CELO,
+  ChainId.SONIC,
+  ChainId.SKALE_EUROPA,
+  ChainId.BLAST,
+  ChainId.THUNDERCORE,
+  ChainId.APTOS,
+  ChainId.CORE,
+  ChainId.ZETACHAIN,
+  ChainId.BOBA,
+  ChainId.MANTLE,
+  ChainId.HYPEREVM,
+  ChainId.BERACHAIN,
+  ChainId.MEGAETH,
+  ChainId.PLASMA,
+  ChainId.MONAD,
+  ChainId.XLAYER,
+  ChainId.CRONOS,
+  ChainId.MODE,
+  ChainId.KAVA,
+  ChainId.ZKSYNC_ERA,
+  ChainId.METIS,
+  ChainId.MANTA,
+  ChainId.ZKLINK,
+  ChainId.APE,
+  ChainId.POLYGON_ZKEVM,
+  ChainId.TAIKO,
+  ChainId.HARMONY,
+] as const
+
+export const getSortedChainIds = <T extends ChainId>(
+  chainIds: readonly T[],
+) => {
+  return Array.from(
+    new Set([
+      ...(PREFERRED_CHAINID_ORDER.filter((el) =>
+        chainIds.includes(el as (typeof chainIds)[number]),
+      ) as T[]),
+      ...chainIds,
+    ]),
+  )
+}
+
+export const CHAIN_IDS = [
+  ...SUSHISWAP_SUPPORTED_CHAIN_IDS,
+  ...AGGREGATOR_ONLY_CHAIN_IDS,
+  SvmChainId.SOLANA,
+] as const
+
+export const AMM_SUPPORTED_CHAIN_IDS = SUSHISWAP_SUPPORTED_CHAIN_IDS.filter(
+  (
+    c,
+  ): c is Exclude<
+    (typeof SUSHISWAP_SUPPORTED_CHAIN_IDS)[number],
+    EvmTestnetChainId | (typeof DISABLED_CHAIN_IDS)[number]
+  > =>
+    !isEvmTestnetChainId(c as EvmTestnetChainId) &&
+    !DISABLED_CHAIN_IDS.includes(c as (typeof DISABLED_CHAIN_IDS)[number]),
+)
+
+export const SUPPORTED_CHAIN_IDS = Array.from(
+  new Set([
+    ...PREFERRED_CHAINID_ORDER.filter((el) =>
+      CHAIN_IDS.includes(el as (typeof CHAIN_IDS)[number]),
+    ),
+    ...CHAIN_IDS,
+  ]),
+).filter(
+  (
+    c,
+  ): c is Exclude<
+    (typeof CHAIN_IDS)[number],
+    EvmTestnetChainId | (typeof DISABLED_CHAIN_IDS)[number]
+  > =>
+    !isEvmTestnetChainId(c as EvmTestnetChainId) &&
+    !DISABLED_CHAIN_IDS.includes(c as (typeof DISABLED_CHAIN_IDS)[number]),
+)
+
+export type SupportedChainId = (typeof SUPPORTED_CHAIN_IDS)[number]
+export const isSupportedChainId = (
+  chainId: number,
+): chainId is SupportedChainId => SUPPORTED_CHAIN_IDS.includes(chainId as any)
+
+const UNSORTED_SUPPORTED_NETWORKS = [
+  ...SUPPORTED_CHAIN_IDS,
+  MvmChainId.APTOS,
+  StellarChainId.STELLAR,
+  SvmChainId.SOLANA,
+].filter(
+  (c) => !DISABLED_CHAIN_IDS.includes(c as (typeof DISABLED_CHAIN_IDS)[number]),
+)
+
+export const SUPPORTED_NETWORKS = Array.from(
+  new Set([
+    ...PREFERRED_CHAINID_ORDER.filter((el) =>
+      UNSORTED_SUPPORTED_NETWORKS.includes(
+        el as (typeof UNSORTED_SUPPORTED_NETWORKS)[number],
+      ),
+    ),
+    ...UNSORTED_SUPPORTED_NETWORKS,
+  ]),
+)
+
+const UNSORTED_POOL_SUPPORTED_NETWORKS = [
+  ...PoolChainIds,
+  MvmChainId.APTOS,
+  StellarChainId.STELLAR,
+].filter(
+  (c) => !DISABLED_CHAIN_IDS.includes(c as (typeof DISABLED_CHAIN_IDS)[number]),
+)
+
+export const POOL_SUPPORTED_NETWORKS = Array.from(
+  new Set([
+    ...PREFERRED_CHAINID_ORDER.filter((el) =>
+      UNSORTED_POOL_SUPPORTED_NETWORKS.includes(
+        el as (typeof UNSORTED_POOL_SUPPORTED_NETWORKS)[number],
+      ),
+    ),
+    ...UNSORTED_POOL_SUPPORTED_NETWORKS,
+  ]),
+)
+
+export const ZAP_SUPPORTED_CHAIN_IDS = [
+  ChainId.ETHEREUM,
+  ChainId.OPTIMISM,
+  ChainId.BSC,
+  ChainId.GNOSIS,
+  ChainId.POLYGON,
+  ChainId.BASE,
+  ChainId.ARBITRUM,
+  ChainId.AVALANCHE,
+  ChainId.KATANA,
+  ChainId.SONIC,
+  ChainId.LINEA,
+] as const
+
+export type ZapSupportedChainId = (typeof ZAP_SUPPORTED_CHAIN_IDS)[number]
+export const isZapSupportedChainId = (
+  chainId: number,
+): chainId is ZapSupportedChainId =>
+  ZAP_SUPPORTED_CHAIN_IDS.includes(chainId as ZapSupportedChainId)
+
+export const LIFI_XSWAP_SUPPORTED_CHAIN_IDS = [
+  ChainId.APE,
+  ChainId.ARBITRUM,
+  ChainId.AVALANCHE,
+  ChainId.BASE,
+  ChainId.BERACHAIN,
+  ChainId.BLAST,
+  ChainId.BOBA,
+  ChainId.BSC,
+  ChainId.CELO,
+  ChainId.CRONOS,
+  ChainId.ETHEREUM,
+  ChainId.FANTOM,
+  // ChainId.FUSE,
+  ChainId.GNOSIS,
+  ChainId.HEMI,
+  ChainId.HYPEREVM,
+  ChainId.KATANA,
+  ChainId.LINEA,
+  ChainId.MANTLE,
+  ChainId.MODE,
+  ChainId.MONAD,
+  // ChainId.MOONBEAM,
+  // ChainId.MOONRIVER,
+  ChainId.OPTIMISM,
+  ChainId.PLASMA,
+  ChainId.POLYGON,
+  // ChainId.POLYGON_ZKEVM,
+  ChainId.ROOTSTOCK,
+  ChainId.SCROLL,
+  ChainId.SONIC,
+  ChainId.TAIKO,
+  ChainId.ZKSYNC_ERA,
+
+  ChainId.SOLANA,
+] as const
+
+export type LifiXSwapSupportedChainId =
+  (typeof LIFI_XSWAP_SUPPORTED_CHAIN_IDS)[number]
+
+export const isLifiXSwapSupportedChainId = (
+  chainId: number,
+): chainId is LifiXSwapSupportedChainId =>
+  LIFI_XSWAP_SUPPORTED_CHAIN_IDS.includes(chainId as any)

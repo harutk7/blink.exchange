@@ -1,0 +1,242 @@
+'use client'
+
+import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
+import { useBreakpoint, useDebounce } from '@sushiswap/hooks'
+import {
+  InterfaceEventName,
+  InterfaceModalName,
+  Trace,
+} from '@sushiswap/telemetry'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  TextField,
+  classNames,
+  gtagEvent,
+} from '@sushiswap/ui'
+import React, {
+  type ReactNode,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
+import { useAccount } from 'src/lib/wallet'
+import type { EvmChainId } from 'sushi/evm'
+import { type StellarChainId, isStellarChainId } from 'sushi/stellar'
+import type { SvmChainId } from 'sushi/svm'
+import StellarTokenSelector from '~stellar/_common/ui/token-selector/token-selector'
+import { CurrencyInfo } from './currency-info'
+import { DesktopNetworkSelector } from './desktop-network-selector'
+import { MobileNetworkSelector } from './mobile-network-selector'
+import { TokenSelectorStates } from './token-selector-states'
+
+type TokenSelectorChainId = EvmChainId | SvmChainId | StellarChainId
+
+interface TokenSelectorProps<
+  TChainId extends TokenSelectorChainId,
+  TNetwork extends TokenSelectorChainId = TChainId,
+> {
+  id?: string
+  selected: CurrencyFor<TChainId> | undefined
+  chainId: TChainId
+  onSelect?(currency: CurrencyFor<TChainId>): void
+  children: ReactNode
+  currencies?: Record<string, CurrencyFor<TChainId>>
+  includeNative?: boolean
+  hidePinnedTokens?: boolean
+  hideSearch?: boolean
+  networks?: readonly TNetwork[]
+  selectedNetwork?: TNetwork
+  onNetworkSelect?: (network: TNetwork) => void
+}
+
+export function TokenSelector<
+  TChainId extends TokenSelectorChainId,
+  TNetwork extends TokenSelectorChainId = TChainId,
+>(props: TokenSelectorProps<TChainId, TNetwork>) {
+  if (isStellarChainId(props.chainId)) {
+    const stellar = props as TokenSelectorProps<StellarChainId, TNetwork>
+    return (
+      <StellarTokenSelector
+        id={stellar.id ?? 'token-selector'}
+        selected={stellar.selected}
+        onSelect={stellar.onSelect}
+        currencies={stellar.currencies}
+        hideSearch={stellar.hideSearch}
+        networks={stellar.networks}
+        selectedNetwork={stellar.selectedNetwork}
+        onNetworkSelect={stellar.onNetworkSelect}
+      >
+        {stellar.children}
+      </StellarTokenSelector>
+    )
+  }
+  return (
+    <EvmSvmTokenSelector
+      {...(props as EvmSvmTokenSelectorProps<EvmChainId | SvmChainId>)}
+    />
+  )
+}
+
+interface EvmSvmTokenSelectorProps<
+  TChainId extends EvmChainId | SvmChainId,
+  TNetwork extends TokenSelectorChainId = TChainId,
+> extends Omit<
+    TokenSelectorProps<TChainId, TNetwork>,
+    'currencies' | 'id' | 'networks' | 'selectedNetwork'
+  > {
+  currencies?: Record<string, CurrencyFor<TChainId, { approved?: boolean }>>
+  networks?: readonly TNetwork[]
+  selectedNetwork?: TNetwork
+}
+
+function EvmSvmTokenSelector<
+  TChainId extends EvmChainId | SvmChainId,
+  TNetwork extends TokenSelectorChainId = TChainId,
+>({
+  includeNative = true,
+  selected,
+  onSelect,
+  chainId,
+  children,
+  currencies: _currencies,
+  hidePinnedTokens,
+  hideSearch,
+  networks,
+  selectedNetwork,
+  onNetworkSelect,
+}: EvmSvmTokenSelectorProps<TChainId, TNetwork>) {
+  const address = useAccount(chainId)
+
+  const [query, setQuery] = useState('')
+  const [open, setOpen] = useState(false)
+  const [currencyInfo, showCurrencyInfo] = useState<
+    CurrencyFor<TChainId> | false
+  >(false)
+
+  const debouncedQuery = useDebounce(query, 250)
+
+  useEffect(() => {
+    if (debouncedQuery) gtagEvent('token-search', { query: debouncedQuery })
+  }, [debouncedQuery])
+
+  // Clear the query when the dialog is closed
+  useEffect(() => {
+    if (!open) {
+      setQuery('')
+    }
+  }, [open])
+
+  const currencies = useMemo(() => {
+    if (_currencies) {
+      return Object.values(_currencies)
+    }
+  }, [_currencies])
+
+  const _onSelect = useCallback(
+    (currency: CurrencyFor<TChainId>) => {
+      if (onSelect) {
+        onSelect(currency)
+      }
+
+      setOpen(false)
+    },
+    [onSelect],
+  )
+
+  const _onNetworkSelect = useCallback(
+    (network: TNetwork) => {
+      if (currencyInfo) {
+        showCurrencyInfo(false)
+      }
+
+      if (onNetworkSelect) {
+        onNetworkSelect(network)
+      }
+    },
+    [onNetworkSelect, currencyInfo],
+  )
+
+  const { isMd } = useBreakpoint('md')
+
+  return (
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>{children}</DialogTrigger>
+      <DialogContent
+        className={classNames(
+          'h-[80vh] !flex !flex-col md:!flex-row w-fit !p-0',
+          networks ? 'md:min-w-[720px]' : 'md:min-w-[600px]',
+        )}
+      >
+        <Trace
+          name={InterfaceEventName.TOKEN_SELECTOR_OPENED}
+          modal={InterfaceModalName.TOKEN_SELECTOR}
+          shouldLogImpression
+        >
+          {networks && selectedNetwork && onNetworkSelect && isMd ? (
+            <DesktopNetworkSelector
+              networks={networks}
+              selectedNetwork={selectedNetwork}
+              onSelect={_onNetworkSelect}
+            />
+          ) : null}
+          <div className="flex flex-col gap-4 overflow-y-auto relative p-6">
+            {currencyInfo ? (
+              <CurrencyInfo
+                currency={currencyInfo}
+                onBack={() => showCurrencyInfo(false)}
+              />
+            ) : null}
+            <DialogHeader className="!text-left">
+              <DialogTitle>Select a token</DialogTitle>
+              <DialogDescription>
+                Select a token from our default list or search for a token by
+                symbol or address.
+              </DialogDescription>
+            </DialogHeader>
+            {networks && selectedNetwork && onNetworkSelect && !isMd ? (
+              <MobileNetworkSelector
+                networks={networks}
+                selectedNetwork={selectedNetwork}
+                onSelect={_onNetworkSelect}
+              />
+            ) : null}
+            {!hideSearch ? (
+              <div className="flex gap-2">
+                <TextField
+                  placeholder="Search by token or address"
+                  icon={MagnifyingGlassIcon}
+                  type="text"
+                  testdata-id={`token-selector-address-input`}
+                  value={query}
+                  onValueChange={setQuery}
+                />
+              </div>
+            ) : null}
+            <div
+              id="token-list-container"
+              className="space-y-2 flex flex-1 flex-col flex-grow gap-3 px-1 py-0.5 overflow-y-scroll md:pr-4 pr-2"
+            >
+              <TokenSelectorStates
+                selected={selected}
+                chainId={chainId}
+                account={address}
+                onSelect={_onSelect}
+                currencies={currencies}
+                includeNative={includeNative}
+                hidePinnedTokens={hidePinnedTokens}
+                search={query}
+                onShowInfo={showCurrencyInfo}
+              />
+            </div>
+          </div>
+        </Trace>
+      </DialogContent>
+    </Dialog>
+  )
+}

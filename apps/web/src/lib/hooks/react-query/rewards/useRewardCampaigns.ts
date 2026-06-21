@@ -1,0 +1,59 @@
+import { useQuery } from '@tanstack/react-query'
+import { type EvmAddress, type EvmChainId, EvmToken } from 'sushi/evm'
+import { getAddress } from 'viem/utils'
+import type * as z from 'zod'
+import { merklCampaignsValidator } from './validator'
+
+interface UseRewardCampaignsParams {
+  pool: EvmAddress | undefined
+  chainId: EvmChainId | undefined
+  mainParameterSuffix?: string
+  enabled?: boolean
+}
+
+export type RewardCampaign = Omit<
+  z.infer<typeof merklCampaignsValidator>[number],
+  'rewardToken' | 'amount'
+> & {
+  isLive: boolean
+  rewardToken: EvmToken
+  amount: number
+}
+
+export function useRewardCampaigns({
+  pool,
+  chainId,
+  mainParameterSuffix,
+  enabled = true,
+}: UseRewardCampaignsParams) {
+  return useQuery({
+    queryKey: ['merklRewardCampaigns', { pool, chainId, mainParameterSuffix }],
+    queryFn: async () => {
+      if (!pool || !chainId) throw new Error()
+      const url = new URL(`${window.location.origin}/api/merkl/campaigns`)
+      url.searchParams.set('chainId', `${chainId}`)
+      url.searchParams.set(
+        'mainParameter',
+        `${getAddress(pool)}${mainParameterSuffix ?? ''}`,
+      )
+      url.searchParams.set('test', `${false}`)
+
+      const res = await fetch(url.toString())
+      const json = await res.json()
+      const parsed = merklCampaignsValidator.parse(json)
+
+      const now = Date.now() / 1000
+
+      return parsed.map((parsed) => ({
+        ...parsed,
+        apr: parsed.apr / 100,
+        rewardToken: new EvmToken(parsed.rewardToken),
+        isLive: now >= +parsed.startTimestamp && now <= +parsed.endTimestamp,
+        amount: +parsed.amount / 10 ** parsed.rewardToken.decimals,
+      }))
+    },
+    staleTime: 15000, // 15 seconds
+    gcTime: 60000, // 1min
+    enabled: Boolean(enabled && pool && chainId),
+  })
+}

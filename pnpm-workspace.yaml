@@ -1,0 +1,39 @@
+packages:
+  - 'apis/*'
+  - 'apps/*'
+  - 'config/*'
+  - 'packages/*'
+  - 'packages/stellar/contract-bindings/*'
+
+minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - sushi
+
+catalog:
+  "typescript": 5.8.3
+  "utf-8-validate": 6.0.3
+  "zod": 4.1.11
+
+catalogs:
+  web3:
+    "abitype": 1.2.3
+    "wagmi": 3.3.2
+    "@wagmi/core": 3.2.2
+    "viem": 2.44.4
+    "@solana/addresses": 6.0.1
+    "sushi": 6.6.11
+
+  react:
+    "next": 16.2.6
+    "react": 19.2.4
+    "@types/react": 19.2.14
+    "react-dom": 19.2.4
+    "@types/react-dom": 19.2.3
+  
+  ui:
+    "tailwindcss": 3.3.2
+
+  tsconfig:
+    "@tsconfig/next": 2.0.1
+    "@tsconfig/node20": 20.1.4
+    "@tsconfig/strictest": 2.0.2
