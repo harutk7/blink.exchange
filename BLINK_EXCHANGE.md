@@ -149,8 +149,49 @@ A root-level `Dockerfile` and `docker-compose.yml` are provided for task 437.
   by casting `token.address` to `AddressFor<TChainId>` before passing it to
   `getIdFromChainIdAddress`.
 
+## Live Data Configuration
+
+The frontend is now configured to use real, public blockchain infrastructure instead of mock data.
+
+### RPC endpoints
+
+The wagmi/viem client reads per-chain RPC URLs from `NEXT_PUBLIC_RPC_*` environment variables. If a variable is unset, the app falls back to a free public RPC for that chain. The configured public RPCs are:
+
+| Chain | Env var | Public RPC |
+|-------|---------|------------|
+| Ethereum | `NEXT_PUBLIC_RPC_ETHEREUM` | `https://ethereum-rpc.publicnode.com` |
+| Polygon | `NEXT_PUBLIC_RPC_POLYGON` | `https://polygon-bor-rpc.publicnode.com` |
+| Arbitrum | `NEXT_PUBLIC_RPC_ARBITRUM` | `https://arbitrum-rpc.publicnode.com` |
+| BSC | `NEXT_PUBLIC_RPC_BSC` | `https://bsc-rpc.publicnode.com` |
+| Avalanche | `NEXT_PUBLIC_RPC_AVALANCHE` | `https://avalanche-c-chain-rpc.publicnode.com` |
+| Optimism | `NEXT_PUBLIC_RPC_OPTIMISM` | `https://optimism-rpc.publicnode.com` |
+| Base | `NEXT_PUBLIC_RPC_BASE` | `https://base-rpc.publicnode.com` |
+| Gnosis | `NEXT_PUBLIC_RPC_GNOSIS` | `https://gnosis-rpc.publicnode.com` |
+
+Other chains fall back to the original dRPC URLs using `DRPC_ID` / `NEXT_PUBLIC_DRPC_ID`.
+
+### Subgraph / data endpoints
+
+Pool, token, price, and swap data are fetched from SushiSwap's live hosted services:
+
+- Data API: `https://production.data-gcp.sushi.com` (`NEXT_PUBLIC_SUSHI_DATA_API_HOST`)
+- Swap API: `https://api.sushi.com` (`NEXT_PUBLIC_API_BASE_URL`)
+- The Graph key: `NEXT_PUBLIC_SUSHI_GRAPH_KEY`
+
+These endpoints provide real token prices, real liquidity pools, real TVL, and real swap quotes.
+
+### Docker environment
+
+`docker-compose.yml` and the root `Dockerfile` pass all of the above variables as build args and runtime environment variables, so the container starts with live data enabled.
+
+### Known working chains
+
+- **Ethereum mainnet** — fully configured with a public RPC and live SushiSwap data.
+- **Polygon** — fully configured with a public RPC and live SushiSwap data.
+- **Arbitrum, BSC, Avalanche, Optimism, Base, Gnosis** — configured with public RPCs; data availability depends on the SushiSwap data API coverage for each chain.
+
+Chains that do not have a `NEXT_PUBLIC_RPC_*` override continue to use dRPC and require a valid `DRPC_ID` to load live data.
+
 ## Next Steps
 
-- **Task 437:** Dockerize the BLINK Exchange (Dockerfiles + `docker-compose.yml`).
-- **Task 438:** Configure real live blockchain data (public RPCs + Graph subgraphs).
 - **Task 439:** Deploy the Dockerized exchange to the StrukSwarm workspace server.

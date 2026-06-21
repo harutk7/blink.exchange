@@ -13,6 +13,15 @@ services:
         NEXT_PUBLIC_SUSHI_DATA_API_HOST: https://production.data-gcp.sushi.com
         NEXT_PUBLIC_API_BASE_URL: https://api.sushi.com
         EDGE_CONFIG: ""
+        # Public RPC endpoints for real live blockchain data
+        NEXT_PUBLIC_RPC_ETHEREUM: https://ethereum-rpc.publicnode.com
+        NEXT_PUBLIC_RPC_POLYGON: https://polygon-bor-rpc.publicnode.com
+        NEXT_PUBLIC_RPC_ARBITRUM: https://arbitrum-rpc.publicnode.com
+        NEXT_PUBLIC_RPC_BSC: https://bsc-rpc.publicnode.com
+        NEXT_PUBLIC_RPC_AVALANCHE: https://avalanche-c-chain-rpc.publicnode.com
+        NEXT_PUBLIC_RPC_OPTIMISM: https://optimism-rpc.publicnode.com
+        NEXT_PUBLIC_RPC_BASE: https://base-rpc.publicnode.com
+        NEXT_PUBLIC_RPC_GNOSIS: https://gnosis-rpc.publicnode.com
     container_name: blink-exchange-frontend
     ports:
       - "3000:3000"
@@ -23,6 +32,15 @@ services:
       NEXT_PUBLIC_DRPC_ID: demo
       NEXT_PUBLIC_SUSHI_DATA_API_HOST: https://production.data-gcp.sushi.com
       NEXT_PUBLIC_API_BASE_URL: https://api.sushi.com
+      # Public RPC endpoints passed through at runtime as well
+      NEXT_PUBLIC_RPC_ETHEREUM: https://ethereum-rpc.publicnode.com
+      NEXT_PUBLIC_RPC_POLYGON: https://polygon-bor-rpc.publicnode.com
+      NEXT_PUBLIC_RPC_ARBITRUM: https://arbitrum-rpc.publicnode.com
+      NEXT_PUBLIC_RPC_BSC: https://bsc-rpc.publicnode.com
+      NEXT_PUBLIC_RPC_AVALANCHE: https://avalanche-c-chain-rpc.publicnode.com
+      NEXT_PUBLIC_RPC_OPTIMISM: https://optimism-rpc.publicnode.com
+      NEXT_PUBLIC_RPC_BASE: https://base-rpc.publicnode.com
+      NEXT_PUBLIC_RPC_GNOSIS: https://gnosis-rpc.publicnode.com
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://localhost:3000 | grep -qi html || exit 1"]
       interval: 30s

@@ -3,141 +3,149 @@ import { http, type Chain, type Transport } from 'viem'
 
 const drpcId = process.env['DRPC_ID'] || process.env['NEXT_PUBLIC_DRPC_ID']
 
+const chainIdToKey = Object.fromEntries(
+  evmChains.map((chain) => [chain.chainId, chain.key]),
+) as Record<EvmChainId, string>
+
+function rpcUrl(chainId: EvmChainId, fallback: string): string {
+  const key = chainIdToKey[chainId]
+  if (!key) return fallback
+  const envKey = `NEXT_PUBLIC_RPC_${key.toUpperCase().replace(/-/g, '_')}`
+  return process.env[envKey] || fallback
+}
+
 export const publicTransports = {
   [EvmChainId.ARBITRUM_NOVA]: http(
-    `https://lb.drpc.live/ogrpc?network=arbitrum-nova&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.ARBITRUM_NOVA, `https://lb.drpc.live/ogrpc?network=arbitrum-nova&dkey=${drpcId}`),
   ),
   [EvmChainId.ARBITRUM]: http(
-    `https://lb.drpc.live/ogrpc?network=arbitrum&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.ARBITRUM, 'https://arbitrum-rpc.publicnode.com'),
   ),
   [EvmChainId.AVALANCHE]: http(
-    `https://lb.drpc.live/ogrpc?network=avalanche&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.AVALANCHE, 'https://avalanche-c-chain-rpc.publicnode.com'),
   ),
   [EvmChainId.BOBA]: http(
-    `https://lb.drpc.live/ogrpc?network=boba-eth&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.BOBA, `https://lb.drpc.live/ogrpc?network=boba-eth&dkey=${drpcId}`),
   ),
   [EvmChainId.BOBA_BNB]: http(
-    `https://lb.drpc.live/ogrpc?network=boba-bnb&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.BOBA_BNB, `https://lb.drpc.live/ogrpc?network=boba-bnb&dkey=${drpcId}`),
   ),
   [EvmChainId.BSC]: http(
-    `https://lb.drpc.live/ogrpc?network=bsc&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.BSC, 'https://bsc-rpc.publicnode.com'),
   ),
   [EvmChainId.BTTC]: http('https://rpc.bittorrentchain.io'),
   [EvmChainId.CELO]: http(
-    `https://lb.drpc.live/ogrpc?network=celo&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.CELO, `https://lb.drpc.live/ogrpc?network=celo&dkey=${drpcId}`),
   ),
   [EvmChainId.ETHEREUM]: http(
-    `https://lb.drpc.live/ogrpc?network=ethereum&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.ETHEREUM, 'https://ethereum-rpc.publicnode.com'),
   ),
   [EvmChainId.FANTOM]: http(
-    `https://lb.drpc.live/ogrpc?network=fantom&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.FANTOM, `https://lb.drpc.live/ogrpc?network=fantom&dkey=${drpcId}`),
   ),
   [EvmChainId.GNOSIS]: http(
-    `https://lb.drpc.live/ogrpc?network=gnosis&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.GNOSIS, 'https://gnosis-rpc.publicnode.com'),
   ),
   [EvmChainId.HARMONY]: http(
-    `https://lb.drpc.live/ogrpc?network=harmony-0&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.HARMONY, `https://lb.drpc.live/ogrpc?network=harmony-0&dkey=${drpcId}`),
   ),
   [EvmChainId.KAVA]: http(
-    `https://lb.drpc.live/ogrpc?network=kava&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.KAVA, `https://lb.drpc.live/ogrpc?network=kava&dkey=${drpcId}`),
   ),
   [EvmChainId.METIS]: http(
-    `https://lb.drpc.live/ogrpc?network=metis&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.METIS, `https://lb.drpc.live/ogrpc?network=metis&dkey=${drpcId}`),
   ),
   [EvmChainId.OPTIMISM]: http(
-    `https://lb.drpc.live/ogrpc?network=optimism&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.OPTIMISM, 'https://optimism-rpc.publicnode.com'),
   ),
   [EvmChainId.POLYGON]: http(
-    `https://lb.drpc.live/ogrpc?network=polygon&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.POLYGON, 'https://polygon-bor-rpc.publicnode.com'),
   ),
   [EvmChainId.POLYGON_ZKEVM]: http(
-    `https://lb.drpc.live/ogrpc?network=polygon-zkevm&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.POLYGON_ZKEVM, `https://lb.drpc.live/ogrpc?network=polygon-zkevm&dkey=${drpcId}`),
   ),
   [EvmChainId.THUNDERCORE]: http(
-    `https://lb.drpc.live/ogrpc?network=thundercore&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.THUNDERCORE, `https://lb.drpc.live/ogrpc?network=thundercore&dkey=${drpcId}`),
   ),
   [EvmChainId.HAQQ]: http(
-    `https://lb.drpc.live/ogrpc?network=haqq&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.HAQQ, `https://lb.drpc.live/ogrpc?network=haqq&dkey=${drpcId}`),
   ),
   [EvmChainId.CORE]: http(
-    `https://lb.drpc.live/ogrpc?network=core&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.CORE, `https://lb.drpc.live/ogrpc?network=core&dkey=${drpcId}`),
   ),
   [EvmChainId.ZKSYNC_ERA]: http(
-    `https://lb.drpc.live/ogrpc?network=zksync&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.ZKSYNC_ERA, `https://lb.drpc.live/ogrpc?network=zksync&dkey=${drpcId}`),
   ),
   [EvmChainId.LINEA]: http(
-    `https://lb.drpc.live/ogrpc?network=linea&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.LINEA, `https://lb.drpc.live/ogrpc?network=linea&dkey=${drpcId}`),
   ),
   [EvmChainId.BASE]: http(
-    `https://lb.drpc.live/ogrpc?network=base&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.BASE, 'https://base-rpc.publicnode.com'),
   ),
   [EvmChainId.SCROLL]: http(
-    `https://lb.drpc.live/ogrpc?network=scroll&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.SCROLL, `https://lb.drpc.live/ogrpc?network=scroll&dkey=${drpcId}`),
   ),
-  [EvmChainId.FILECOIN]: http(
-    'https://api.node.glif.io/rpc/v1',
-    // `https://lb.drpc.live/ogrpc?network=filecoin&dkey=${drpcId}`,
-  ),
+  [EvmChainId.FILECOIN]: http('https://api.node.glif.io/rpc/v1'),
   [EvmChainId.ZETACHAIN]: http(
-    `https://lb.drpc.live/ogrpc?network=zeta-chain&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.ZETACHAIN, `https://lb.drpc.live/ogrpc?network=zeta-chain&dkey=${drpcId}`),
   ),
   [EvmChainId.CRONOS]: http(
-    `https://lb.drpc.live/ogrpc?network=cronos&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.CRONOS, `https://lb.drpc.live/ogrpc?network=cronos&dkey=${drpcId}`),
   ),
   [EvmChainId.BLAST]: http(
-    `https://lb.drpc.live/ogrpc?network=blast&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.BLAST, `https://lb.drpc.live/ogrpc?network=blast&dkey=${drpcId}`),
   ),
   [EvmChainId.SKALE_EUROPA]: http(
     'https://elated-tan-skat-indexer.skalenodes.com:10072',
   ),
   [EvmChainId.ROOTSTOCK]: http(
-    `https://lb.drpc.live/ogrpc?network=rootstock&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.ROOTSTOCK, `https://lb.drpc.live/ogrpc?network=rootstock&dkey=${drpcId}`),
   ),
   [EvmChainId.MANTLE]: http(
-    `https://lb.drpc.live/ogrpc?network=mantle&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.MANTLE, `https://lb.drpc.live/ogrpc?network=mantle&dkey=${drpcId}`),
   ),
   [EvmChainId.MANTA]: http(
-    `https://lb.drpc.live/ogrpc?network=manta-pacific&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.MANTA, `https://lb.drpc.live/ogrpc?network=manta-pacific&dkey=${drpcId}`),
   ),
   [EvmChainId.MODE]: http(
-    `https://lb.drpc.live/ogrpc?network=mode&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.MODE, `https://lb.drpc.live/ogrpc?network=mode&dkey=${drpcId}`),
   ),
   [EvmChainId.TAIKO]: http(
-    `https://lb.drpc.live/ogrpc?network=taiko&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.TAIKO, `https://lb.drpc.live/ogrpc?network=taiko&dkey=${drpcId}`),
   ),
   [EvmChainId.ZKLINK]: http('https://rpc.zklink.io'),
   [EvmChainId.APE]: http(
-    `https://lb.drpc.live/ogrpc?network=apechain&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.APE, `https://lb.drpc.live/ogrpc?network=apechain&dkey=${drpcId}`),
   ),
   [EvmChainId.SONIC]: http(
-    `https://lb.drpc.live/ogrpc?network=sonic&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.SONIC, `https://lb.drpc.live/ogrpc?network=sonic&dkey=${drpcId}`),
   ),
   [EvmChainId.HEMI]: http(
-    `https://lb.drpc.live/ogrpc?network=hemi&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.HEMI, `https://lb.drpc.live/ogrpc?network=hemi&dkey=${drpcId}`),
   ),
   [EvmChainId.KATANA]: http(
-    `https://lb.drpc.live/ogrpc?network=katana&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.KATANA, `https://lb.drpc.live/ogrpc?network=katana&dkey=${drpcId}`),
   ),
   [EvmChainId.HYPEREVM]: http(
-    `https://lb.drpc.live/ogrpc?network=hyperliquid&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.HYPEREVM, `https://lb.drpc.live/ogrpc?network=hyperliquid&dkey=${drpcId}`),
   ),
   [EvmChainId.BERACHAIN]: http(
-    `https://lb.drpc.live/ogrpc?network=berachain&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.BERACHAIN, `https://lb.drpc.live/ogrpc?network=berachain&dkey=${drpcId}`),
   ),
   [EvmChainId.PLASMA]: http(
-    `https://lb.drpc.live/ogrpc?network=plasma&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.PLASMA, `https://lb.drpc.live/ogrpc?network=plasma&dkey=${drpcId}`),
   ),
   [EvmChainId.FUSE]: http(
-    `https://lb.drpc.live/ogrpc?network=fuse&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.FUSE, `https://lb.drpc.live/ogrpc?network=fuse&dkey=${drpcId}`),
   ),
   [EvmChainId.MONAD]: http(
-    `https://lb.drpc.live/ogrpc?network=monad-mainnet&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.MONAD, `https://lb.drpc.live/ogrpc?network=monad-mainnet&dkey=${drpcId}`),
   ),
   [EvmChainId.MEGAETH]: http(
-    `https://lb.drpc.live/ogrpc?network=megaeth&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.MEGAETH, `https://lb.drpc.live/ogrpc?network=megaeth&dkey=${drpcId}`),
   ),
   [EvmChainId.XLAYER]: http(
-    `https://lb.drpc.live/ogrpc?network=xlayer&dkey=${drpcId}`,
+    rpcUrl(EvmChainId.XLAYER, `https://lb.drpc.live/ogrpc?network=xlayer&dkey=${drpcId}`),
   ),
   /* Testnets */
   [EvmChainId.ARBITRUM_SEPOLIA]: http('https://sepolia-rollup.arbitrum.io/rpc'),
