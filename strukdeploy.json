@@ -1,0 +1,17 @@
+{
+  "port": 3000,
+  "subdomain": "blink-exchange",
+  "env": [
+    "NEXT_PUBLIC_RPC_ETHEREUM",
+    "NEXT_PUBLIC_RPC_POLYGON",
+    "NEXT_PUBLIC_RPC_ARBITRUM",
+    "NEXT_PUBLIC_RPC_BSC",
+    "NEXT_PUBLIC_RPC_AVALANCHE",
+    "NEXT_PUBLIC_RPC_OPTIMISM",
+    "NEXT_PUBLIC_RPC_BASE",
+    "NEXT_PUBLIC_RPC_GNOSIS",
+    "NEXT_PUBLIC_SUSHI_DATA_API_HOST",
+    "NEXT_PUBLIC_API_BASE_URL"
+  ],
+  "dockerfile": "Dockerfile"
+}
