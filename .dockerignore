@@ -39,4 +39,3 @@ playwright-report
 test-results
 
 # TradingView (not bundled)
-apps/web/public/trading-view/

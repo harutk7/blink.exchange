@@ -35,7 +35,7 @@ ARG NEXT_PUBLIC_DRPC_ID=demo
 ARG NEXT_PUBLIC_SUSHI_GRAPH_KEY=be60450c5c375eaa36fa6b1540047434
 ARG NEXT_PUBLIC_SUSHI_DATA_API_HOST=https://production.data-gcp.sushi.com
 ARG NEXT_PUBLIC_API_BASE_URL=https://api.sushi.com
-ARG EDGE_CONFIG=
+ARG EDGE_CONFIG=dummy
 # Public RPC endpoints used by apps/web/src/lib/wagmi/config/viem.ts
 ARG NEXT_PUBLIC_RPC_ETHEREUM=https://ethereum-rpc.publicnode.com
 ARG NEXT_PUBLIC_RPC_POLYGON=https://polygon-bor-rpc.publicnode.com

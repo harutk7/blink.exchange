@@ -1,4 +1,5 @@
 import { get } from '@vercel/edge-config'
+export const dynamic = 'force-dynamic'
 import { NextResponse } from 'next/server'
 import * as z from 'zod'
 
