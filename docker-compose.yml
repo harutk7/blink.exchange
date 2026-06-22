@@ -12,7 +12,7 @@ services:
         NEXT_PUBLIC_SUSHI_GRAPH_KEY: be60450c5c375eaa36fa6b1540047434
         NEXT_PUBLIC_SUSHI_DATA_API_HOST: https://production.data-gcp.sushi.com
         NEXT_PUBLIC_API_BASE_URL: https://api.sushi.com
-        EDGE_CONFIG: "dummy"
+        EDGE_CONFIG: "https://edge-config.vercel.com/ecfg_bmnimekvxviezdhl1p5qmzpvhu2l?token=e973a21f-a8bc-4a22-9160-03328111a53e"
         # Public RPC endpoints for real live blockchain data
         NEXT_PUBLIC_RPC_ETHEREUM: https://ethereum-rpc.publicnode.com
         NEXT_PUBLIC_RPC_POLYGON: https://polygon-bor-rpc.publicnode.com
@@ -32,6 +32,7 @@ services:
       NEXT_PUBLIC_DRPC_ID: demo
       NEXT_PUBLIC_SUSHI_DATA_API_HOST: https://production.data-gcp.sushi.com
       NEXT_PUBLIC_API_BASE_URL: https://api.sushi.com
+      EDGE_CONFIG: "https://edge-config.vercel.com/ecfg_bmnimekvxviezdhl1p5qmzpvhu2l?token=e973a21f-a8bc-4a22-9160-03328111a53e"
       # Public RPC endpoints passed through at runtime as well
       NEXT_PUBLIC_RPC_ETHEREUM: https://ethereum-rpc.publicnode.com
       NEXT_PUBLIC_RPC_POLYGON: https://polygon-bor-rpc.publicnode.com
