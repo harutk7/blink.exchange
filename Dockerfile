@@ -1,6 +1,6 @@
 FROM node:20-alpine
 WORKDIR /app
-RUN wget -qO /tmp/blink-deploy.tar.gz https://github.com/harutk7/blink.exchange/releases/download/deploy-v2/blink-deploy.tar.gz && \
+RUN wget -qO /tmp/blink-deploy.tar.gz https://github.com/harutk7/blink.exchange/releases/download/deploy-v3/blink-deploy.tar.gz && \
     tar xzf /tmp/blink-deploy.tar.gz -C /app/ && \
     rm /tmp/blink-deploy.tar.gz
 WORKDIR /app/apps/web
