@@ -90,9 +90,8 @@ export const applyCommonLineStyles = ({
 }) => {
   const themeColors = getThemeColors(resolvedTheme)
 
-  line
-    .setLineStyle(2)
-    .setLineLength(POSITION_LINE_LENGTH * lengthMultiplier, 'pixel')
+  line.setLineStyle(2)
+  ;(line as any).setLineLength(POSITION_LINE_LENGTH * lengthMultiplier, 'pixel')
   line.setLineWidth(2)
 
   if (quantity) {
@@ -125,7 +124,7 @@ export const createChartWidgetOptions = ({
   showBuySellInChart: boolean
   resolvedTheme: string
   container: HTMLDivElement
-}): ChartingLibraryWidgetOptions => ({
+}): ChartingLibraryWidgetOptions & Record<string, any> => ({
   symbol: `${activeAsset}::${assetName}::${decimals}::${marketType}::${address}::${showBuySellInChart}`,
   datafeed: Datafeed,
   interval:
@@ -159,7 +158,7 @@ export const createChartWidgetOptions = ({
   fullscreen: widgetProps.fullscreen,
   autosize: widgetProps.autosize,
   custom_css_url: '/trading-view-chart.css',
-  theme: resolvedTheme === 'dark' ? 'dark' : 'light',
+  theme: resolvedTheme === 'dark' ? 'Dark' : 'Light',
   overrides: {
     'paneProperties.vertGridProperties.color':
       resolvedTheme === 'dark' ? '#2C2C2E' : '#E5E7EB',
