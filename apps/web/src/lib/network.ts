@@ -1,12 +1,18 @@
 import { type ChainId, getChainById } from 'sushi'
 import { isSushiSwapChainId } from 'sushi/evm'
 
-export const getNetworkName = (network: ChainId) => {
-  return getChainById(network).name
+export const getNetworkName = (network: number) => {
+  const chain = getChainById(network as ChainId)
+  if (chain) return chain.name
+  if (network === 17000) return 'Holesky'
+  return 'Unknown'
 }
 
-export const getNetworkKey = (network: ChainId) => {
-  return typeof network === 'number' ? getChainById(network).key : network
+export const getNetworkKey = (network: number) => {
+  const chain = getChainById(network as ChainId)
+  if (chain) return chain.key
+  if (network === 17000) return 'holesky'
+  return String(network)
 }
 
 export const replaceNetworkSlug = (network: ChainId, pathname: string) => {

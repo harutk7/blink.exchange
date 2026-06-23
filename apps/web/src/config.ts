@@ -72,7 +72,6 @@ export const DISABLED_CHAIN_IDS = [
   ChainId.HARMONY,
   ChainId.POLYGON_ZKEVM,
   ChainId.TATARA,
-  ChainId.SEPOLIA,
   ChainId.BOKUTO,
 ] as const
 
@@ -161,22 +160,28 @@ export const AMM_SUPPORTED_CHAIN_IDS = SUSHISWAP_SUPPORTED_CHAIN_IDS.filter(
     !DISABLED_CHAIN_IDS.includes(c as (typeof DISABLED_CHAIN_IDS)[number]),
 )
 
+const TESTNET_CHAIN_IDS = [ChainId.SEPOLIA] as const
+
 export const SUPPORTED_CHAIN_IDS = Array.from(
   new Set([
     ...PREFERRED_CHAINID_ORDER.filter((el) =>
       CHAIN_IDS.includes(el as (typeof CHAIN_IDS)[number]),
     ),
     ...CHAIN_IDS,
+    ...TESTNET_CHAIN_IDS,
   ]),
 ).filter(
   (
     c,
-  ): c is Exclude<
-    (typeof CHAIN_IDS)[number],
-    EvmTestnetChainId | (typeof DISABLED_CHAIN_IDS)[number]
-  > =>
-    !isEvmTestnetChainId(c as EvmTestnetChainId) &&
-    !DISABLED_CHAIN_IDS.includes(c as (typeof DISABLED_CHAIN_IDS)[number]),
+  ): c is
+    | Exclude<
+        (typeof CHAIN_IDS)[number],
+        EvmTestnetChainId | (typeof DISABLED_CHAIN_IDS)[number]
+      >
+    | (typeof TESTNET_CHAIN_IDS)[number] =>
+    TESTNET_CHAIN_IDS.includes(c as (typeof TESTNET_CHAIN_IDS)[number]) ||
+    (!isEvmTestnetChainId(c as EvmTestnetChainId) &&
+      !DISABLED_CHAIN_IDS.includes(c as (typeof DISABLED_CHAIN_IDS)[number])),
 )
 
 export type SupportedChainId = (typeof SUPPORTED_CHAIN_IDS)[number]

@@ -111,6 +111,8 @@ export const NETWORK_NAKED_ICON: Partial<
   Record<ChainId | string, IconComponent>
 > = {
   [ChainId.ETHEREUM]: EthereumNaked,
+  [ChainId.SEPOLIA]: EthereumNaked,
+  [17000]: EthereumNaked,
   [ChainId.FANTOM]: FantomNaked,
   [ChainId.POLYGON]: PolygonNaked,
   [ChainId.GNOSIS]: GnosisNaked,

@@ -111,6 +111,8 @@ export const NETWORK_CIRCLE_ICON: Partial<
   Record<ChainId | string, IconComponent>
 > = {
   [ChainId.ETHEREUM]: EthereumCircle,
+  [ChainId.SEPOLIA]: EthereumCircle,
+  [17000]: EthereumCircle,
   [ChainId.FANTOM]: FantomCircle,
   [ChainId.POLYGON]: PolygonCircle,
   [ChainId.GNOSIS]: GnosisCircle,

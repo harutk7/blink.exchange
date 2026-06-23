@@ -1,5 +1,6 @@
 import { EvmChainId, evmChains } from 'sushi/evm'
 import { http, type Chain, type Transport } from 'viem'
+import { holesky } from 'viem/chains'
 
 const drpcId = process.env['DRPC_ID'] || process.env['NEXT_PUBLIC_DRPC_ID']
 
@@ -150,10 +151,15 @@ export const publicTransports = {
   /* Testnets */
   [EvmChainId.ARBITRUM_SEPOLIA]: http('https://sepolia-rollup.arbitrum.io/rpc'),
   // [EvmChainId.POLYGON_TESTNET]: http('https://rpc.ankr.com/polygon_mumbai'),
-  [EvmChainId.SEPOLIA]: http('https://sepolia.drpc.live'),
+  [EvmChainId.SEPOLIA]: http(
+    rpcUrl(EvmChainId.SEPOLIA, 'https://ethereum-sepolia-rpc.publicnode.com'),
+  ),
+  [17000]: http(
+    rpcUrl(17000 as EvmChainId, 'https://ethereum-holesky-rpc.publicnode.com'),
+  ),
   [EvmChainId.TATARA]: http('https://rpc.tatara.katanarpc.com'),
   [EvmChainId.BOKUTO]: http('https://rpc-bokuto.katanarpc.com'),
-} as const satisfies Record<EvmChainId, Transport>
+} as const satisfies Record<EvmChainId | 17000, Transport>
 
 function pluck<
   Arr extends readonly Record<string, any>[],
@@ -163,9 +169,10 @@ function pluck<
   return arr.map((item) => item[key]) as any
 }
 
-export const publicChains = pluck(evmChains, 'viemChain') satisfies Readonly<
-  Chain[]
->
+export const publicChains = [
+  ...pluck(evmChains, 'viemChain'),
+  holesky as unknown as (typeof evmChains)[number]['viemChain'],
+] as const satisfies readonly [Chain, ...Chain[]]
 
 export function fromEntriesConst<
   const Pairs extends readonly (readonly [PropertyKey, any])[],
