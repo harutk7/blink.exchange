@@ -32,7 +32,7 @@ export default function sitemap({ id }: { id: string }): MetadataRoute.Sitemap {
   return evmChainPaths.map(
     (path) =>
       ({
-        url: `https://www.sushi.com/${id}${path}`,
+        url: `https://blink-exchange.apps.levarqo.com/${id}${path}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
       }) as const,

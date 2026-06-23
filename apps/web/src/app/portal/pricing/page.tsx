@@ -33,7 +33,7 @@ function EnterpriseCard() {
         </CardHeader>
         <CardContent>
           <span className="text-sm text-slate-400">Custom pricing</span>
-          <Link href="mailto:portal-support@sushi.com">
+          <Link href="mailto:support@blink.exchange">
             <Button variant="secondary">Contact Us</Button>
           </Link>
         </CardContent>

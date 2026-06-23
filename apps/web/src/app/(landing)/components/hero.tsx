@@ -7,7 +7,15 @@ import { motion } from 'framer-motion'
 import React, { type FC, useEffect, useState } from 'react'
 import { CurrencyInput } from 'src/lib/wagmi/components/web3-input/Currency'
 import { ChainId } from 'sushi'
-import { EvmNative, SUSHI } from 'sushi/evm'
+import { EvmNative, EvmToken } from 'sushi/evm'
+
+const BLINK = new EvmToken({
+  chainId: ChainId.ETHEREUM,
+  address: '0x6B3595068778DD592e39A122f4f5a5cF09C99fE1',
+  decimals: 18,
+  symbol: 'BLINK',
+  name: 'BLINK',
+})
 
 const TITLES = ['Whenever', 'Wherever', 'Whoever']
 const VALUES = [
@@ -42,7 +50,7 @@ export const Hero: FC = () => {
           <div className="flex flex-col">
             <div className="flex flex-col">
               <h1 className={typographyVariants({ variant: 'h1' })}>
-                Buy and Sell Instantly on Sushi.{' '}
+                Buy and Sell Instantly on BLINK.{' '}
                 <span className="text-blue"> {TITLES[index]}.</span>
               </h1>
               <p
@@ -112,7 +120,7 @@ export const Hero: FC = () => {
                 type="OUTPUT"
                 className="p-3 bg-white dark:bg-slate-800 rounded-xl"
                 value={valueIndex >= 0 ? VALUES[valueIndex].value1 : ''}
-                currency={SUSHI[ChainId.ETHEREUM]}
+                currency={BLINK}
                 chainId={ChainId.ETHEREUM}
                 disabled={true}
               />
@@ -126,7 +134,7 @@ export const Hero: FC = () => {
                 className="mt-4"
               >
                 <Button size="xl" asChild fullWidth>
-                  <LinkInternal href="https://www.sushi.com/swap">
+                  <LinkInternal href="https://blink-exchange.apps.levarqo.com/ethereum/swap">
                     Trade Now
                   </LinkInternal>
                 </Button>

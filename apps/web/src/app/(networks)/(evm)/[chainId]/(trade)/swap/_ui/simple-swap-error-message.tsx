@@ -89,7 +89,7 @@ export const SimpleSwapErrorMessage: FC<{
                             </p>
                             <LinkExternal
                               className="text-blue hover:underline"
-                              href="https://www.sushi.com/academy/articles/what-is-slippage-price-impact"
+                              href="https://blink-landing.apps.levarqo.com/what-is-slippage-price-impact"
                             >
                               Learn more
                             </LinkExternal>

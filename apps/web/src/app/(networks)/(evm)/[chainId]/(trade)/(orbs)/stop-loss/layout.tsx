@@ -3,7 +3,7 @@ import { TwapLayout } from '../_ui/twap-layout'
 
 export const metadata: Metadata = {
   title: 'Stop Loss',
-  description: 'Trade with stop loss orders on SushiSwap.',
+  description: 'Trade with stop loss orders on BLINK Exchange.',
 }
 
 export default async function SwapStopLossLayout(props: {

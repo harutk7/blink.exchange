@@ -12,7 +12,7 @@ const DATA: ExpendableCardData = {
   content: (
     <>
       <p>
-        SushiGuard is a way of protecting Sushi users from a predatory process
+        BLINK Guard is a way of protecting BLINK users from a predatory process
         known as MEV. MEV stands for “Maximal Extractable Value” and in essence
         plays the same role in web3 as arbitrage trading does in traditional
         finance. Automated bots will monitor the network and “sandwich” your
@@ -20,7 +20,7 @@ const DATA: ExpendableCardData = {
         less-optimal trade than they originally thought.
       </p>
       <p>
-        SushiGuard can easily be toggled on in the swap interface for trades,
+        BLINK Guard can easily be toggled on in the swap interface for trades,
         giving users the ability to protect their trades from these “sandwich
         attacks” and refund an amount of the gas fees to users that they spent
         to make the trade, improving the experience and saving them money.
@@ -59,7 +59,7 @@ export const Guard: FC = () => {
                     {DATA.title}
                   </motion.h1>
                   <span className="text-lg text-center lg:text-left mt-2 mb-3">
-                    Enable SushiGuard and earn gas refunds on all of your
+                    Enable BLINK Guard and earn gas refunds on all of your
                     transactions.
                   </span>
                   <Button onClick={() => setOpen(true)} variant="secondary">

@@ -17,7 +17,7 @@ export const ArticleLinks: FC<ArticleLinks> = ({ article }) => {
       </h2>
       <div className="flex gap-5">
         <a
-          href={`http://twitter.com/share?url=https://www.sushi.com/blog/${article.slug}`}
+          href={`http://twitter.com/share?url=https://blink-exchange.apps.levarqo.com/blog/${article.slug}`}
           rel="noreferrer"
           target="_blank"
           title="Share on Twitter"
@@ -31,8 +31,8 @@ export const ArticleLinks: FC<ArticleLinks> = ({ article }) => {
         <a
           href={`mailto:?subject=${encodeURI(
             article.title || '',
-          )}&body=Checkout this new SushiSwap Blog article ${encodeURI(
-            `https://www.sushi.com/blog/${article.slug}`,
+          )}&body=Checkout this new BLINK Exchange Blog article ${encodeURI(
+            `https://blink-exchange.apps.levarqo.com/blog/${article.slug}`,
           )}`}
           title="Share by Email"
         >

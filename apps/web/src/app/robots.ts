@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: ['/'],
     },
-    sitemap: 'https://www.sushi.com/sitemap-index.xml',
+    sitemap: 'https://blink-exchange.apps.levarqo.com/sitemap-index.xml',
   }
 }

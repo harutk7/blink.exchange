@@ -13,7 +13,7 @@ interface ArticleLinks {
 
 export const ArticleLinks: FC<ArticleLinks> = ({ article }) => {
   const shareText = getShareText(article.title)
-  const url = `https://www.sushi.com/academy/articles/${article.slug}`
+  const url = `https://blink-exchange.apps.levarqo.com/academy/${article.slug}`
 
   return (
     <section>
@@ -21,7 +21,7 @@ export const ArticleLinks: FC<ArticleLinks> = ({ article }) => {
         <a
           target="_blank"
           title="Share on Twitter"
-          href={`http://twitter.com/share?text=${shareText}&url=https://www.sushi.com/academy/articles/${article.slug}`}
+          href={`http://twitter.com/share?text=${shareText}&url=https://blink-exchange.apps.levarqo.com/academy/${article.slug}`}
           rel="noreferrer"
         >
           <TwitterIcon

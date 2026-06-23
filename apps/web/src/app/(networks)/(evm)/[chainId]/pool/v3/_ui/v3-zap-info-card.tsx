@@ -177,7 +177,7 @@ export const V3ZapInfoCard: FC<V3ZapInfoCardProps> = memo(
                 ) : (
                   <div className="flex items-center justify-end flex-wrap gap-x-2">
                     <span className="whitespace-nowrap">
-                      1 SushiSwap V3 NFT
+                      1 BLINK Exchange V3 NFT
                     </span>
                     {typeof amountOutUSD !== 'undefined'
                       ? `(${formatUSD(amountOutUSD)})`

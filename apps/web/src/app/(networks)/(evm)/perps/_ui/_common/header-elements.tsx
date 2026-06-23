@@ -24,7 +24,7 @@ export const EXPLORE_NAVIGATION_LINKS =
       {
         title: 'Swap',
         href: `/`,
-        description: 'Swap any token on Sushi.',
+        description: 'Swap any token on BLINK.',
       },
       {
         title: 'Trade',
@@ -39,7 +39,7 @@ export const EXPLORE_NAVIGATION_LINKS =
       {
         title: 'Referrals',
         href: `/perps/referrals`,
-        description: 'Track Sushi referral rewards.',
+        description: 'Track BLINK referral rewards.',
       },
       {
         title: 'Points',

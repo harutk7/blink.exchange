@@ -18,8 +18,8 @@ export const getConnectorConfig = () => {
 
 const createConnectorConfig = () => {
   return getDefaultConfig({
-    appName: 'SushiSwap',
-    appUrl: 'https://sushi.com',
+    appName: 'BLINK Exchange',
+    appUrl: 'https://blink-exchange.apps.levarqo.com',
     autoConnect: true,
     enableMobile: true,
   })

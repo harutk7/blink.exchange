@@ -82,7 +82,7 @@ const COLUMNS = [
             <DropdownMenuLabel>
               {row.original.name}
               <Chip variant="blue" className="ml-2">
-                SushiSwap V3
+                BLINK Exchange V3
               </Chip>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
@@ -213,7 +213,7 @@ const COLUMNS = [
               {row.original.name}
               {row.original.protocol === 'SUSHISWAP_V2' && (
                 <Chip variant="pink" className="ml-2">
-                  SushiSwap V2
+                  BLINK Exchange V2
                 </Chip>
               )}
             </DropdownMenuLabel>

@@ -39,7 +39,7 @@ export const ExploreHero: FC<{ chainId: ChainId }> = ({ chainId }) => {
       <div className="flex flex-col gap-2 lg:gap-4 items-start lg:items-end">
         <div className="flex flex-col items-start gap-1 lg:items-end">
           <span className="font-semibold lg:text-sm">
-            Looking for a partnership with Sushi?
+            Looking for a partnership with BLINK?
           </span>
           <Button
             className="flex-1 w-fit sm:flex-0"
@@ -53,7 +53,7 @@ export const ExploreHero: FC<{ chainId: ChainId }> = ({ chainId }) => {
         <div className="flex flex-col items-start gap-1 lg:items-end">
           <span className="font-semibold lg:text-sm">Need Help?</span>
           <Button icon={DiscordIcon} variant="link" size="sm" asChild>
-            <LinkExternal href="https://sushi.com/discord">
+            <LinkExternal href="#">
               Join our discord
             </LinkExternal>
           </Button>

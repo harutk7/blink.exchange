@@ -22,7 +22,7 @@ const CROSS_CHAIN_SWAP_NETWORKS = getSortedChainIds([
 export const metadata: Metadata = {
   title: 'Cross-Chain Swap',
   description:
-    'Swap assets across multiple blockchains with ease using Cross-Chain Swap. Enjoy secure, seamless cross-chain swaps for a streamlined DeFi experience on Sushi.com.',
+    'Swap assets across multiple blockchains with ease using Cross-Chain Swap. Enjoy secure, seamless cross-chain swaps for a streamlined DeFi experience on BLINK.com.',
 }
 
 export default async function CrossChainSwapLayout(props: {

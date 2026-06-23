@@ -3,7 +3,7 @@ import { TwapLayout } from '../_ui/twap-layout'
 
 export const metadata: Metadata = {
   title: 'Limit',
-  description: 'Trade with limit orders on SushiSwap.',
+  description: 'Trade with limit orders on BLINK Exchange.',
 }
 
 export default async function SwapLimitLayout(props: {

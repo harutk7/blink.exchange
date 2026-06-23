@@ -55,7 +55,7 @@ function BaseCookieDialog({
         <span>
           By clicking on “Accept all cookies”, you consent to the storage of
           cookies on your device and the associated processing of your personal
-          data by Sushi Labs and our partners to improve website navigation,
+          data by BLINK Labs and our partners to improve website navigation,
           analyse website usage and conduct surveys. You can revoke your consent
           at any time via the “Manage cookie preferences” button.
           <br />

@@ -11,22 +11,22 @@ const SUPPORT_CHANNELS = [
   {
     icon: DiscordIcon,
     title: 'Community on Discord',
-    link: 'https://sushi.com/discord',
+    link: '#',
   },
   {
     icon: TwitterIcon,
     title: 'Follow us on Twitter',
-    link: 'https://twitter.com/sushiswap',
+    link: '#',
   },
   {
     icon: GithubIcon,
     title: 'Code on Github',
-    link: 'https://github.com/sushiswap',
+    link: 'https://github.com/harutk7/blink.exchange',
   },
   {
     icon: YoutubeIcon,
     title: 'Youtube',
-    link: 'https://www.youtube.com/c/SushiOfficial',
+    link: '#',
   },
 ]
 
@@ -51,7 +51,7 @@ export const NeedHelp: FC = () => {
             <div className="order-2 md:order-1 flex flex-col gap-2">
               <span className="text-xl font-semibold">Contact Support</span>
               <span className="text-lg text-muted-foreground">
-                Join the Sushi Discord community and ask away!
+                Join the BLINK Discord community and ask away!
               </span>
               <div className="mt-4">
                 {SUPPORT_CHANNELS.map(({ title, icon: Icon, link }, index) => (
@@ -75,7 +75,7 @@ export const NeedHelp: FC = () => {
             <div className="order-1 md:order-2 col-span-2">
               <div className="-mt-5 bg-gradient-to-b bg-secondary rounded-2xl p-6">
                 <div className="flex flex-col gap-2">
-                  <span className="text-xl font-semibold">Sushi Academy</span>
+                  <span className="text-xl font-semibold">BLINK Academy</span>
                   <span className="text-lg text-muted-foreground">
                     Demystifying DeFi - everything you need to know in one
                     place. For beginners to advanced users, and everyone in
@@ -83,7 +83,7 @@ export const NeedHelp: FC = () => {
                   </span>
                 </div>
                 <div className="flex justify-start mt-4">
-                  <LinkExternal href="https://www.sushi.com/academy">
+                  <LinkExternal href="https://blink-landing.apps.levarqo.com">
                     <Button variant="secondary">Visit Academy</Button>
                   </LinkExternal>
                 </div>

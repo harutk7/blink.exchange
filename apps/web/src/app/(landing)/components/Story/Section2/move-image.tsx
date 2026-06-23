@@ -24,7 +24,7 @@ export const MoveImage = () => {
         <Image
           alt="stellar"
           objectFit="contain"
-          src="https://res.cloudinary.com/sushi-cdn/image/upload/w_420,h_420/v1669343082/Orbit_1_bl83x0.webp"
+          src="/og-image.png"
           layout="fill"
         />
       </motion.div>

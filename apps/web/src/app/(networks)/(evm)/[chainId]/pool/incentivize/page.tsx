@@ -587,7 +587,7 @@ const Incentivize = withCheckerRoot(() => {
                                         </DialogTitle>
                                         <DialogDescription>
                                           {token0?.symbol}/{token1?.symbol} •
-                                          SushiSwap V3 • {feeAmount / 10000}%
+                                          BLINK Exchange V3 • {feeAmount / 10000}%
                                         </DialogDescription>
                                       </DialogHeader>
                                       <div className="flex flex-col gap-4">

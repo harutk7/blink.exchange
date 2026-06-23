@@ -318,7 +318,7 @@ export const SimpleSwapTokenNotFoundDialog = () => {
           variant={isHoneypot || isFoT || isRisky ? 'destructive' : 'warning'}
         >
           {isHoneypot
-            ? 'Honeypot tokens restrict selling. Sushi does not support this token type.'
+            ? 'Honeypot tokens restrict selling. BLINK does not support this token type.'
             : isFoT
               ? 'This token charges a tax fee on transfer. Tax tokens are not supported in V3. You might not be able to trade, transfer, or withdraw liquidity of this token.'
               : isRisky

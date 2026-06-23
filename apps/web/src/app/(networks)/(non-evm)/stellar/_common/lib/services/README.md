@@ -1,6 +1,6 @@
 # Stellar DEX Services
 
-This directory contains the core services for interacting with SushiSwap on the Stellar network. These services provide a clean, type-safe interface for swap operations, liquidity management, and smart routing.
+This directory contains the core services for interacting with BLINK Exchange on the Stellar network. These services provide a clean, type-safe interface for swap operations, liquidity management, and smart routing.
 
 ## Services Overview
 

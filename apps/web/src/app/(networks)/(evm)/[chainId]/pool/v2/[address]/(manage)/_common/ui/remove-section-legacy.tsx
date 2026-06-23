@@ -63,7 +63,7 @@ import { RemoveSectionWidget } from './remove-section-widget'
 
 const REMOVE_V2_LIQUIDITY_PERMIT_INFO: PermitInfo = {
   version: '1',
-  name: 'SushiSwap LP Token',
+  name: 'BLINK Exchange LP Token',
   type: PermitType.AMOUNT,
 }
 

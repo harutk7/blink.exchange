@@ -74,11 +74,11 @@ export const XSushiPrice = ({
     >
       <ArrowTrendingUpIcon width={16} height={16} />
       <span className="flex items-baseline gap-1 whitespace-nowrap scroll hide-scrollbar">
-        1 {invert ? 'SUSHI' : 'XSUSHI'}{' '}
+        1 {invert ? 'BLINK' : 'xBLINK'}{' '}
         <span className="font-normal">
           ({formatUSD(invert ? sushiFiatPrice : xSushiFiatPrice)})
         </span>{' '}
-        = {price} {invert ? 'XSUSHI' : 'SUSHI'}{' '}
+        = {price} {invert ? 'xBLINK' : 'BLINK'}{' '}
         <span className="font-normal">
           ({formatUSD(invert ? xSushiFiatPrice : sushiFiatPrice)})
         </span>

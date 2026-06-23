@@ -11,7 +11,7 @@ import { NavigationItems } from '../navigation-items'
 
 export const metadata: Metadata = {
   title: 'Pools',
-  description: 'Explore SushiSwap pools.',
+  description: 'Explore BLINK Exchange pools.',
 }
 
 export default async function ExploreLayout(props: {

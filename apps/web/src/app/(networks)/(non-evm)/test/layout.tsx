@@ -2,7 +2,7 @@ import { Container } from '@sushiswap/ui'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'SushiSwap | Test',
+  title: 'BLINK Exchange | Test',
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

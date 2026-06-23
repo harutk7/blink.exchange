@@ -1,5 +1,5 @@
 export const mainnet = {
-  name: 'Sushi Default Aptos List',
+  name: 'BLINK Default Aptos List',
   timestamp: '2023-11-17T09:00:43.962Z',
   version: {
     major: 1,

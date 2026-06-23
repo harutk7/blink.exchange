@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Sushi 🍣',
-    template: '%s | Sushi 🍣',
+    default: 'BLINK 🍣',
+    template: '%s | BLINK 🍣',
   },
   description:
     'A Decentralised Finance (DeFi) app with features such as swap and permissionless market making for liquidity providers.',

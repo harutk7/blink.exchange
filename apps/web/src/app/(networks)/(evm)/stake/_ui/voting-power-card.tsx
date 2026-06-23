@@ -40,7 +40,7 @@ export const VotingPowerCard = () => {
             icon={InformationCircleIcon}
             iconProps={{ width: 12, height: 12 }}
           >
-            Voting power is used to participate in the Sushi DAO.
+            Voting power is used to participate in the BLINK DAO.
           </Explainer>
         </CardTitle>
       </CardHeader>
@@ -57,7 +57,7 @@ export const VotingPowerCard = () => {
                   {votingPower === 0 || votingPower === undefined
                     ? 0
                     : formatNumber(votingPower)}{' '}
-                  SUSHI POWAH
+                  BLINK POWAH
                 </span>
                 <span className="text-sm text-muted-foreground">
                   {nonZeroBalances
@@ -73,7 +73,7 @@ export const VotingPowerCard = () => {
             )}
           </div>
           <div className="flex gap-6">
-            <LinkExternal href="https://snapshot.org/#/delegate/sushigov.eth">
+            <LinkExternal href="https://snapshot.org/#/delegate/blinkgov.eth">
               <Button
                 asChild
                 variant="link"

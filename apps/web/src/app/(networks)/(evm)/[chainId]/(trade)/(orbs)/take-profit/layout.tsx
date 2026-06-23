@@ -3,7 +3,7 @@ import { TwapLayout } from '../_ui/twap-layout'
 
 export const metadata: Metadata = {
   title: 'Take Profit',
-  description: 'Trade with take profit orders on SushiSwap.',
+  description: 'Trade with take profit orders on BLINK Exchange.',
 }
 
 export default async function SwapTakeProfitLayout(props: {

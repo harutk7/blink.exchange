@@ -62,7 +62,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       card: isMediaVideo(article.cover.provider_metadata)
         ? 'player'
         : 'summary_large_image',
-      creator: '@SushiSwap',
+      creator: '@BLINK Exchange',
     },
   }
 }
@@ -118,7 +118,7 @@ export default async function Page(props: Props) {
       alternateName: article.cover.alternativeText,
       caption: article.cover.caption,
     },
-    url: `https://www.sushi.com/blog/${article.slug}`,
+    url: `https://blink-exchange.apps.levarqo.com/academy/${article.slug}`,
   }
 
   return (

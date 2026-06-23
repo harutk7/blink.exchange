@@ -339,7 +339,7 @@ const WidgetContent: FC<WidgetContentProps> = ({
                 Single-asset deposit only.{' '}
                 <a
                   // TODO
-                  href="https://www.sushi.com/academy"
+                  href="https://blink-landing.apps.levarqo.com"
                   target="_blank"
                   rel="noreferrer"
                   className="text-blue hover:text-blue-600"
@@ -392,7 +392,7 @@ const WidgetContent: FC<WidgetContentProps> = ({
                 Single-asset deposit only.{' '}
                 <a
                   // TODO
-                  href="https://www.sushi.com/academy"
+                  href="https://blink-landing.apps.levarqo.com"
                   target="_blank"
                   rel="noreferrer"
                   className="text-blue hover:text-blue-600"

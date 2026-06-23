@@ -9,14 +9,14 @@ import { BentoBoxSVG, SwitchSVG } from './svgs'
 const DATA = [
   {
     caption: 'For Developers',
-    category: 'Sushi Token Vault',
+    category: 'BLINK Token Vault',
     title: 'The interest-bearing DeFi base layer',
     icon: BentoBoxSVG,
     content: (
       <>
-        <h3>What’s Sushi Token Vault? What’s In The Box For You?</h3>
+        <h3>What’s BLINK Token Vault? What’s In The Box For You?</h3>
         <p>
-          Sushi Token Vault is an underlying token vault that provides a range
+          BLINK Token Vault is an underlying token vault that provides a range
           of benefits for anything built on top of it. The main idea is to
           provide extra yield on top of a large pool of tokens via simple, safe
           strategies per token in the vault. It keeps an artificial balance
@@ -25,16 +25,16 @@ const DATA = [
           pocket).
         </p>
         <p>
-          Sushi Token Vault allows for a simplified token approval process (each
+          BLINK Token Vault allows for a simplified token approval process (each
           approval is inherited by the system), a minimal proxy factory contract
           for convenience, optimized deposit, withdraw and skim functions that
-          auto convert ETH to WETH, the batching of multiple Sushi Token Vault
+          auto convert ETH to WETH, the batching of multiple BLINK Token Vault
           functions into a single transaction, and so much more, all while
           improving capital efficiency with increased use.
         </p>
       </>
     ),
-    link: 'https://docs.sushi.com/docs/Products/Bentobox',
+    link: 'https://blink-landing.apps.levarqo.com',
     linkText: 'Visit Docs',
   },
   {
@@ -63,7 +63,7 @@ const DATA = [
         </p>
       </>
     ),
-    link: 'https://docs.sushi.com/docs/Products/Trident%20AMM%20Framework',
+    link: 'https://blink-landing.apps.levarqo.com',
     linkText: 'Visit Docs',
   },
 ]
@@ -74,11 +74,11 @@ export const BuildFuture: FC = () => {
       <Container maxWidth="5xl" className="mx-auto">
         <div className="prose dark:prose-invert mx-auto text-center flex flex-col">
           <h1>
-            Help build <span className="text-pink">the future</span> with Sushi.{' '}
+            Help build <span className="text-pink">the future</span> with BLINK.{' '}
           </h1>
           <h5>
             We extend a warm invitation to all developers, innovators, and
-            visionaries to delve into the intricate frameworks that power Sushi.
+            visionaries to delve into the intricate frameworks that power BLINK.
             Our doors are open for you to unravel the possibilities, tap into
             the potentials, and reshape the future of decentralized finance.
           </h5>

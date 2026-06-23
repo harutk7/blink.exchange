@@ -374,7 +374,7 @@ function NearIntentsTradeDetails({
               </List.KeyValue>
               <List.KeyValue
                 title={`Fee (${NEAR_INTENTS_UI_FEE_PERCENT}%)`}
-                subtitle="The fee charged by Sushi."
+                subtitle="The fee charged by BLINK."
               >
                 {feeUsd === undefined || !feeTokenAmount || !swapAmount ? (
                   <SkeletonText align="right" fontSize="sm" className="w-1/5" />

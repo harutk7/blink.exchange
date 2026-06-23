@@ -1,7 +1,7 @@
 import { StellarChainId, StellarToken } from 'sushi/stellar'
 import { CONTRACT_ADDRESSES } from '~stellar/_common/lib/soroban/contracts/futurenet/contract-addresses'
 
-// These are FUTURENET tokens. Sushi only models a single Stellar chainId,
+// These are FUTURENET tokens. BLINK only models a single Stellar chainId,
 // so futurenet tokens reuse StellarChainId.STELLAR; the rest of the app
 // already treats Stellar as a single chain.
 export const baseTokens: StellarToken[] = [

@@ -229,7 +229,7 @@ export const SwapModeButtons = ({
               <a
                 target="_blank"
                 className="text-sm text-blue hover:underline"
-                href="https://www.sushi.com/blog/sushixswap-v2"
+                href="https://blink-landing.apps.levarqo.com/sushixswap-v2"
                 rel="noreferrer"
               >
                 Learn more.

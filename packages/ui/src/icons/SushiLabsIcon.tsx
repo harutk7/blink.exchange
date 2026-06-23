@@ -4,26 +4,31 @@ export const SushiLabsIcon: IconComponent = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      version="1.1"
-      id="Capa_1"
-      x="0px"
-      y="0px"
-      viewBox="100.91 115.61 308.88 258.44"
       {...props}
+      fill="none"
+      viewBox="0 0 512 512"
     >
-      <g>
-        <path d="M244.453,253.216c-68.94-37.824-107.902-99.376-87.166-137.607l-48.647,89.032l0.01,0.01c-0.46,0.67-0.9,1.35-1.31,2.05   c-0.26,0.43-0.51,0.87-0.76,1.31c-20.96,38.22,18.02,99.91,87.07,137.8s142.03,37.62,163-0.6c0.68-1.24,1.3-2.5,1.85-3.79   L404.6,257.13C380.486,290.787,310.67,289.547,244.453,253.216z" />
-        <path d="M409.772,247.673l0.017-0.031l-0.004-0.002C409.781,247.65,409.776,247.661,409.772,247.673z" />
-      </g>
-      <g>
-        <ellipse
-          transform="matrix(0.481 -0.8767 0.8767 0.481 -14.7603 343.1021)"
-          cx="282.419"
-          cy="184.018"
-          rx="31.27"
-          ry="59.194"
-        />
-      </g>
+      <path
+        fill="url(#blink-labs-gradient)"
+        d="M256 16c132.55 0 240 107.45 240 240S388.55 496 256 496 16 388.55 16 256 123.45 16 256 16z"
+      />
+      <path
+        fill="#fff"
+        d="M284 72 148 288h84l-24 152 160-216h-84l36-152z"
+      />
+      <defs>
+        <linearGradient
+          id="blink-labs-gradient"
+          x1="0"
+          y1="0"
+          x2="512"
+          y2="512"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#00D9FF" />
+          <stop offset="1" stopColor="#7B2FBE" />
+        </linearGradient>
+      </defs>
     </svg>
   )
 }

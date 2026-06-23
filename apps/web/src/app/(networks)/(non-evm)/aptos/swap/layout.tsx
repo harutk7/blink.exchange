@@ -3,9 +3,9 @@ import { Header } from '../header'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
-  title: 'SushiSwap on Aptos',
+  title: 'BLINK Exchange on Aptos',
   description:
-    'SushiSwap is a community-driven decentralized exchange (DEX) for traders and liquidity providers.',
+    'BLINK Exchange is a community-driven decentralized exchange (DEX) for traders and liquidity providers.',
 }
 
 export default function SwapLayout({

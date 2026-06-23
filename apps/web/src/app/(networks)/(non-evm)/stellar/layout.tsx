@@ -11,8 +11,8 @@ import { Providers } from './providers'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Sushi 🍣',
-    template: '%s | Sushi 🍣',
+    default: 'BLINK 🍣',
+    template: '%s | BLINK 🍣',
   },
   description:
     'A Decentralised Finance (DeFi) app with features such as swap, cross chain swap, streaming, vesting, and permissionless market making for liquidity providers.',

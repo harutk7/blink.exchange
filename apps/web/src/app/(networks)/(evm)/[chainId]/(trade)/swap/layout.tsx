@@ -7,7 +7,7 @@ import { Providers } from './providers'
 export const metadata: Metadata = {
   title: 'Swap',
   description:
-    'Trade crypto effortlessly with SushiSwap, supporting over 30 chains and featuring a powerful aggregator for the best rates across DeFi.',
+    'Trade crypto effortlessly with BLINK Exchange, supporting over 30 chains and featuring a powerful aggregator for the best rates across DeFi.',
 }
 
 export default async function SwapLayout(props: {

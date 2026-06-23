@@ -12,15 +12,15 @@ import { DEFAULT_TIERS } from './overview'
 
 const FAQ_ITEMS = [
   {
-    title: 'What are Sushi Points?',
+    title: 'What are BLINK Points?',
     value: '1',
     content:
-      'Sushi points are earned by trading perps on Sushi during Season 1. At the end of Season 1, points convert into SUSHI tokens through the airdrop. The more you trade and the higher your tier, the bigger your airdrop allocation.',
+      'BLINK points are earned by trading perps on BLINK during Season 1. At the end of Season 1, points convert into SUSHI tokens through the airdrop. The more you trade and the higher your tier, the bigger your airdrop allocation.',
   },
   {
     title: 'How do I earn points?',
     value: '2',
-    content: `Points are earned through trading volume on Sushi Perps. Every trade you make contributes to your points balance. Both opens and closes count. There's no cap on point distribution — points are calculated based on your total volume traded.`,
+    content: `Points are earned through trading volume on BLINK Perps. Every trade you make contributes to your points balance. Both opens and closes count. There's no cap on point distribution — points are calculated based on your total volume traded.`,
   },
   {
     title: 'What are tiers?',
@@ -73,8 +73,8 @@ const FAQ_ITEMS = [
     content: (
       <p>
         Connect your wallet to the{' '}
-        <LinkExternal href="https://sushi.com/perps/points">
-          Sushi Perps Points Dashboard
+        <LinkExternal href="https://blink-exchange.apps.levarqo.com/perps/points">
+          BLINK Perps Points Dashboard
         </LinkExternal>
         . You'll see your current tier, multiplier, points accrued, and progress
         toward the next tier.
@@ -119,7 +119,7 @@ const FAQ_ITEMS = [
         <p>
           The airdrop pool scales with Season 1 participation. There's no hard
           cap on points distribution every dollar of volume contributes to the
-          total pool, and the goal of Season 1 is to grow Sushi Perps as the
+          total pool, and the goal of Season 1 is to grow BLINK Perps as the
           airdrop scales with it.
         </p>
         <p>
@@ -135,7 +135,7 @@ const FAQ_ITEMS = [
     content: (
       <p>
         Points will result in $SUSHI rewards at a conversion rate to be
-        determined at a future date by Sushi Core team.
+        determined at a future date by BLINK Core team.
       </p>
     ),
   },
@@ -171,9 +171,9 @@ const FAQ_ITEMS = [
     value: '13',
     content: (
       <p>
-        No. Points accrual started on the day Sushi Perps launched. Earlier
+        No. Points accrual started on the day BLINK Perps launched. Earlier
         activity on{' '}
-        <LinkExternal href="https://sushi.com">sushi.com</LinkExternal> does not
+        <LinkExternal href="https://blink-exchange.apps.levarqo.com">sushi.com</LinkExternal> does not
         retroactively earn points.
       </p>
     ),
@@ -215,7 +215,7 @@ const FAQ_ITEMS = [
     value: '17',
     content: (
       <p>
-        The Sushi points program is subject to change. Sushi reserves the right
+        The BLINK points program is subject to change. BLINK reserves the right
         to modify points calculation, multiplier mechanics, distribution
         methodology, and eligibility criteria at any time. The airdrop is not a
         guaranteed financial product and should not be treated as investment
@@ -232,7 +232,7 @@ export const FaqSection = () => {
       <div>
         <h4 className="text-xl text-white font-medium">Why Points Matter?</h4>
         <p className="text-sm text-perps-muted-50 mt-2">
-          Trade on Sushi Perps and earn Points based on the volume you generate
+          Trade on BLINK Perps and earn Points based on the volume you generate
           every season. Hit volume milestones to increase your multiplier{' '}
           <span className="text-[#C26BB3]">(up to 2.0x)</span> and earn Points
           faster. Higher tiers and more Points improve your access to seasonal

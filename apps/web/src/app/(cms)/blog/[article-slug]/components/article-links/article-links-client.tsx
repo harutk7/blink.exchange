@@ -14,7 +14,7 @@ export function ArticleLinksClient({ article }: ArticleLinks) {
       height={20}
       onClick={() =>
         navigator.clipboard.writeText(
-          `https://www.sushi.com/blog/${article.slug}`,
+          `https://blink-exchange.apps.levarqo.com/blog/${article.slug}`,
         )
       }
       width={20}

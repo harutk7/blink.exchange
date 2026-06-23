@@ -30,7 +30,7 @@ export const MigrateBanner: FC = () => {
       <p className="font-bold text-md text-yellow-950">
         If you are unable to withdraw your funds, please{' '}
         <LinkExternal
-          href={'https://sushi.com/discord'}
+          href={'#'}
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -849,7 +849,7 @@ export const SelectPricesWidget: FC<SelectPricesWidget> = ({
           <Card>
             <CardHeader>
               <CardDescription>
-                We{`'`}re excited to share that Sushi integration is now live on{' '}
+                We{`'`}re excited to share that BLINK integration is now live on{' '}
                 <LinkExternal href="https://poolfish.xyz/calculators/sushi">
                   Poolfish.xyz
                 </LinkExternal>
