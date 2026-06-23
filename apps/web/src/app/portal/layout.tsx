@@ -6,9 +6,9 @@ import { Providers } from './providers'
 
 export const metadata: Metadata = {
   title: 'Portal',
-  description: 'The Sushi Labs Developer Portal.',
+  description: 'The BLINK Labs Developer Portal.',
   icons: {
-    icon: '/sushi-labs-white-icon.svg',
+    icon: '/icon-512x512.svg',
   },
 }
 

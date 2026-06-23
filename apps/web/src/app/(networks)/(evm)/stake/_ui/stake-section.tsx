@@ -42,7 +42,7 @@ export const StakeSection = withCheckerRoot(() => {
           chainId={EvmChainId.ETHEREUM}
           hoverCardContent={
             <span className="text-xs text-muted-foreground text-center w-full">
-              {`Sushi Bar is only available on Ethereum Mainnet. You are
+              {`BLINK Bar is only available on Ethereum Mainnet. You are
                 connected to an unsupported network.`}
             </span>
           }

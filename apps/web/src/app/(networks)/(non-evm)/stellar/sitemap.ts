@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return stellarChainPaths.map(
     (path) =>
       ({
-        url: `https://www.sushi.com/stellar/${path}`,
+        url: `https://blink-landing.apps.levarqo.com/stellar/${path}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
       }) as const,

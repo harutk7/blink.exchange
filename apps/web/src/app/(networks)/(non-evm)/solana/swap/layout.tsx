@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { Header } from '../header'
 
 export const metadata: Metadata = {
-  title: 'SushiSwap on Solana',
+  title: 'BLINK Exchange on Solana',
   description:
-    'SushiSwap is a community-driven decentralized exchange (DEX) for traders and liquidity providers.',
+    'BLINK Exchange is a community-driven decentralized exchange (DEX) for traders and liquidity providers.',
 }
 
 export default function SwapLayout({

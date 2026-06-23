@@ -16,11 +16,11 @@ const TABS: TabsExpendableCardData[] = [
     summary:
       'Automate your DAO salaries and vesting schedules while earning interest from yield strategies.',
     image:
-      'https://res.cloudinary.com/sushi-cdn/image/upload/v1669286681/Frame_38656_lci5if.webp',
+      '/og-image.png',
     content: (
       <>
         <p>
-          Furo is Sushi’s payment streaming and token vesting application, a
+          Furo is BLINK’s payment streaming and token vesting application, a
           useful and efficient way of setting up automatic payments for
           contributors to your protocol or DAO, or for executing a company
           payroll.
@@ -35,20 +35,20 @@ const TABS: TabsExpendableCardData[] = [
         </p>
         <h3>Completely under your control</h3>
         <p>
-          Additionally, choose to keep your funds in the Sushi Vault to accrue
+          Additionally, choose to keep your funds in the BLINK Vault to accrue
           more yield, making your direct deposits even larger without you having
           to do a thing.
         </p>
       </>
     ),
-    link: 'https://www.sushi.com/furo',
+    link: 'https://blink-landing.apps.levarqo.com',
     linkText: 'Pay Someone',
     caption: 'For Retail Users',
   },
   // {
   //   title: 'Kashi Lending',
   //   summary: 'Define your own risk profile. Borrow and Lend with confidence',
-  //   image: 'https://res.cloudinary.com/sushi-cdn/image/upload/w_420,h_420/v1668717586/px-Frame_38657_exywa7.webp',
+  //   image: '/og-image.png',
   //   content: (
   //     <>
   //       <span>
@@ -68,15 +68,15 @@ const TABS: TabsExpendableCardData[] = [
   //       <p>A variable interest rate ensures that lenders make the most yield possible, efficiently.</p>
   //     </>
   //   ),
-  //   link: 'https://www.sushi.com/kashi',
+  //   link: 'https://blink-landing.apps.levarqo.com',
   //   linkText: 'Visit Kashi',
   //   caption: 'For Retail Users',
   // },
   // {
   //   title: 'Miso Launchpad',
   //   summary:
-  //     'MISO is Sushi’s permissionless launchpad where project founders can create auctions for their token listings efficiently and market them to a willing audience.',
-  //   image: 'https://res.cloudinary.com/sushi-cdn/image/upload/w_420,h_420/v1668717586/px-Frame_38658_lyl2g5.webp',
+  //     'MISO is BLINK’s permissionless launchpad where project founders can create auctions for their token listings efficiently and market them to a willing audience.',
+  //   image: '/og-image.png',
   //   content: (
   //     <>
   //       <h2>For project founders</h2>
@@ -91,7 +91,7 @@ const TABS: TabsExpendableCardData[] = [
   //       <p>
   //         The MISO marketplace helps founders abstract away a lot of the pain associated with traditional token listings
   //         by assisting the tokens in their price discovery with willing audiences via auctions or a general crowdsale,
-  //         before they are to be listed on the open exchange at Sushi.
+  //         before they are to be listed on the open exchange at BLINK.
   //       </p>
   //       <h2>For participants</h2>
   //       <span>
@@ -106,7 +106,7 @@ const TABS: TabsExpendableCardData[] = [
   //       </p>
   //     </>
   //   ),
-  //   link: 'https://www.sushi.com/miso',
+  //   link: 'https://blink-landing.apps.levarqo.com',
   //   linkText: 'Visit Launchpad',
   //   caption: 'For Retail Users',
   // },

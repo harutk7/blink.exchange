@@ -11,19 +11,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     return [
       {
-        url: 'https://www.sushi.com/academy',
+        url: 'https://blink-exchange.apps.levarqo.com/academy',
         lastModified: new Date(),
         changeFrequency: 'weekly',
       },
       {
-        url: 'https://www.sushi.com/academy/explore',
+        url: 'https://blink-exchange.apps.levarqo.com/academy/explore',
         lastModified: new Date(),
         changeFrequency: 'weekly',
       },
       ...articles.map(
         (article) =>
           ({
-            url: `https://www.sushi.com/academy/${article.slug}`,
+            url: `https://blink-exchange.apps.levarqo.com/academy/${article.slug}`,
             lastModified: new Date(article.updatedAt),
             changeFrequency: 'weekly',
           }) as const,

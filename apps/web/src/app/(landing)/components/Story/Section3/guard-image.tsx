@@ -24,7 +24,7 @@ export const GuardImage = () => {
         <Image
           alt="stellar"
           objectFit="contain"
-          src="https://res.cloudinary.com/sushi-cdn/image/upload/w_420,h_420/v1668714951/uponly_1_jz7f1n.webp"
+          src="/og-image.png"
           layout="fill"
         />
       </motion.div>
@@ -32,7 +32,7 @@ export const GuardImage = () => {
         <Image
           alt="stellar"
           objectFit="contain"
-          src="https://res.cloudinary.com/sushi-cdn/image/upload/w_420,h_420/v1668714065/Ellipse_1107_oopeuh.webp"
+          src="/og-image.png"
           layout="fill"
         />
       </div>

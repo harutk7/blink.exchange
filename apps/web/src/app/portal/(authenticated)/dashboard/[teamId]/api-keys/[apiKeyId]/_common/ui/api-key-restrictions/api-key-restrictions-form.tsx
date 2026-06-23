@@ -70,7 +70,7 @@ function List({
                         placeholder={
                           name.includes('ips')
                             ? '8.8.8.8/24'
-                            : 'https://sushi.com'
+                            : 'https://blink-exchange.apps.levarqo.com'
                         }
                         className={formClassnames({ isDirty, isError })}
                       />

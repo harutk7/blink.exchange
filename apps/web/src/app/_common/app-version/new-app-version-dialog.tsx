@@ -38,7 +38,7 @@ export const NewAppVersionDialog = () => {
             <div className="relative w-full">
               <Image
                 loader={cloudinaryFetchLoader}
-                src="https://cdn.sushi.com/image/upload/v1733481287/new-version-banner.jpg"
+                src="/og-image.png"
                 width={400}
                 height={250}
                 alt="New Version Available"
@@ -47,7 +47,7 @@ export const NewAppVersionDialog = () => {
               />
             </div>
             <span>
-              A new version of Sushi is now available, featuring improvements
+              A new version of BLINK is now available, featuring improvements
               and updates to enhance your experience.
             </span>
           </div>

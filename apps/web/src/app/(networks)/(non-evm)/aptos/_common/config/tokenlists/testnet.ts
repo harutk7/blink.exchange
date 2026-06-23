@@ -1,5 +1,5 @@
 export const testnet = {
-  name: 'Sushi Default Aptos List',
+  name: 'BLINK Default Aptos List',
   timestamp: '2022-01-26T11:45:09Z',
   version: {
     major: 1,
@@ -21,11 +21,11 @@ export const testnet = {
         'https://cryptototem.com/wp-content/uploads/2022/08/aptos-logo.jpg',
     },
     {
-      name: 'Sushi',
+      name: 'BLINK',
       symbol: 'SUSHI',
       decimals: 8,
       address:
-        '0x924a3288570e688396c01950420b298ca90c1ad98835299efb5bb6c6220303f::sushi_coin::Sushi',
+        '0x924a3288570e688396c01950420b298ca90c1ad98835299efb5bb6c6220303f::sushi_coin::BLINK',
       logoURI:
         'https://cdn.sushi.com/image/upload/f_auto,c_limit,w_64,q_auto/tokens/137/0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a.jpg',
     },

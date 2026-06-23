@@ -43,7 +43,7 @@ export function ReferralsActionBar() {
   const hasRedeemedReferralCode =
     overview.data?.hasRedeemedReferralCode ?? false
   const shareLink = primaryCode
-    ? `https://sushi.com/perps/invite/${primaryCode}`
+    ? `https://blink-exchange.apps.levarqo.com/perps/invite/${primaryCode}`
     : undefined
   const shareFeePercent = getReferralShareFeePercent(
     overview.data?.activeFeeLevels,
@@ -136,7 +136,7 @@ function CreateCodeButton({
         <PerpsDialogHeader>
           <PerpsDialogTitle>Create code</PerpsDialogTitle>
           <PerpsDialogDescription>
-            Create a Sushi referral code for this wallet. This flow is separate
+            Create a BLINK referral code for this wallet. This flow is separate
             from Hyperliquid&apos;s referral system.
           </PerpsDialogDescription>
         </PerpsDialogHeader>
@@ -231,7 +231,7 @@ function RedeemCodeDialog({
         <PerpsDialogHeader>
           <PerpsDialogTitle>Enter referral code</PerpsDialogTitle>
           <PerpsDialogDescription>
-            Redeem a Sushi referral code for this wallet. This flow is separate
+            Redeem a BLINK referral code for this wallet. This flow is separate
             from Hyperliquid&apos;s referral system.
           </PerpsDialogDescription>
         </PerpsDialogHeader>

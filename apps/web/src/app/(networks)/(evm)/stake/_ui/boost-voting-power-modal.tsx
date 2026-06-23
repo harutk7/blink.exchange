@@ -50,19 +50,19 @@ export const BoostVotingPowerModal = ({
               isLoading={!weights}
               currency={XSUSHI[EvmChainId.ETHEREUM]}
               weight={weights?.xsushi}
-              link="https://sushi.com/bar"
+              link="#"
             />
             <CurrencyListItem
               isLoading={!weights}
               currency={SUSHI_ETH_SLP}
               weight={weights?.slp}
-              link="https://www.sushi.com/pool/add/v2/1"
+              link="https://blink-landing.apps.levarqo.com/pool/add/v2/1"
             />
             <CurrencyListItem
               isLoading={!weights}
               currency={XSUSHI[EvmChainId.POLYGON]}
               weight={weights?.xsushiPolygon}
-              link="https://www.sushi.com/swap?chainId=137&token0=0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a&token1=0x6811079E3c63ED96Eb005384d7E7ec8810E3D521"
+              link="https://blink-exchange.apps.levarqo.com/ethereum/swap?chainId=137&token0=0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a&token1=0x6811079E3c63ED96Eb005384d7E7ec8810E3D521"
             />
           </List>
         </div>

@@ -65,7 +65,7 @@ export const ZapRouteDialog: FC<ZapRouteDialogProps> = ({
                   {tokenRatios ? `${formatPercent(tokenRatios.token0)}` : '50%'}
                 </div>
                 <span className="text-[10px] font-medium text-muted-foreground truncate">
-                  SushiSwap
+                  BLINK Exchange
                 </span>
               </div>
               <div className="flex items-center justify-end gap-1">
@@ -97,7 +97,7 @@ export const ZapRouteDialog: FC<ZapRouteDialogProps> = ({
                   {tokenRatios ? `${formatPercent(tokenRatios.token1)}` : '50%'}
                 </div>
                 <span className="text-[10px] font-medium text-muted-foreground truncate">
-                  SushiSwap
+                  BLINK Exchange
                 </span>
               </div>
               <div className="flex items-center justify-end gap-1">
@@ -146,7 +146,7 @@ export const ZapRouteDialog: FC<ZapRouteDialogProps> = ({
               <div className="flex flex-col items-center">
                 <div className="text-sm font-medium truncate">100%</div>
                 <span className="text-[10px] font-medium text-muted-foreground truncate">
-                  Deposit to SushiSwap{' '}
+                  Deposit to BLINK Exchange{' '}
                   {isSushiSwapV2Pool(pool as SushiSwapV2Pool) ? 'V2' : 'V3'}
                 </span>
               </div>

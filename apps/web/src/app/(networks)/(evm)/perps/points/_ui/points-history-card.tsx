@@ -54,7 +54,7 @@ export function PointsHistoryCard() {
         <div>
           <h2 className="text-lg font-medium">Daily points history</h2>
           <p className="text-sm text-perps-muted-50">
-            Simple day-by-day Sushi point earnings.
+            Simple day-by-day BLINK point earnings.
           </p>
         </div>
         <PerpsCard

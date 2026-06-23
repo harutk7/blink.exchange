@@ -24,13 +24,13 @@ export const BarHeader = () => {
           width={52}
           height={52}
         />
-        <span className="text-5xl font-bold bg-gradient-to-r from-[#FE5A75] to-[#FEC464] text-transparent bg-clip-text">
-          Sushi Bar
+        <span className="text-5xl font-bold gradient-text">
+          BLINK Bar
         </span>
       </span>
       <span className="text-xl max-w-[720px] text-muted-foreground">
-        For every swap on Sushi, a portion of the swap fee is locked into the
-        liquidity pool awaiting to be served to xSUSHI holders.
+        For every swap on BLINK, a portion of the swap fee is locked into the
+        liquidity pool awaiting to be served to xBLINK holders.
       </span>
       <div className="flex flex-wrap items-center gap-y-5 gap-x-[32px] text-secondary-foreground">
         <div className="flex items-center gap-1.5">
@@ -59,7 +59,7 @@ export const BarHeader = () => {
           Ethereum
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="tracking-tighter font-semibold">XSUSHI</span>
+          <span className="tracking-tighter font-semibold">xBLINK</span>
           <LinkExternal
             href={getEvmChainById(EvmChainId.ETHEREUM).getTokenUrl(
               XSUSHI[EvmChainId.ETHEREUM].address,
@@ -78,7 +78,7 @@ export const BarHeader = () => {
         </div>
       </div>
       <div>
-        <LinkExternal href="https://www.sushi.com/blog/sushi-bar-faq">
+        <LinkExternal href="https://blink-landing.apps.levarqo.com/sushi-bar-faq">
           <Button asChild icon={ArrowTopRightOnSquareIcon}>
             Learn More
           </Button>

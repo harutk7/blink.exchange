@@ -10,7 +10,7 @@ export const PerpsFooter = () => {
       <div className="flex items-center justify-between h-full border-t border-[#0D1217] px-2 bg-[#EDF0F30D] backdrop-blur-2xl">
         <HlApiStatus />
         <div className="flex items-center h-full mr-[65px] text-xs">
-          <_Item href={'https://docs.sushi.com/what-is-sushi'}>
+          <_Item href={'https://blink-landing.apps.levarqo.com/what-is-sushi'}>
             <div>Docs</div>
           </_Item>
           <_Item href={'/legal/terms-of-service'}>
@@ -19,15 +19,15 @@ export const PerpsFooter = () => {
           <_Item href={'/legal/privacy-policy'}>
             <div>Privacy Policy</div>
           </_Item>
-          <_Item href={'https://sushi.com/telegram'}>
+          <_Item href={'https://blink-exchange.apps.levarqo.com/telegram'}>
             <TelegramIcon width={14} height={14} />
             <div>Telegram</div>
           </_Item>
-          <_Item href={'https://sushi.com/twitter'}>
+          <_Item href={'#'}>
             <XIcon width={14} height={14} />
             <div>X (Twitter)</div>
           </_Item>
-          <_Item href={'https://sushi.com/discord'}>
+          <_Item href={'#'}>
             <DiscordIcon width={14} height={14} />
             <div>Discord</div>
           </_Item>

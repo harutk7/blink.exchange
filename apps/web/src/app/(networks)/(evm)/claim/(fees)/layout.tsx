@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'My Fees',
-  description: 'Claim your fees from SushiSwap.',
+  description: 'Claim your fees from BLINK Exchange.',
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

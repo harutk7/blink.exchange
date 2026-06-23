@@ -61,7 +61,7 @@ export const EXPLORE_NAVIGATION_LINKS = (
     {
       title: 'Stake',
       href: '/stake',
-      description: 'Earn protocol fees by staking SUSHI.',
+      description: 'Earn protocol fees by staking tokens.',
     },
   ]
 }
@@ -69,7 +69,7 @@ export const EXPLORE_NAVIGATION_LINKS = (
 export const MORE_NAVIGATION_LINKS: NavigationElementDropdown['items'] = [
   {
     title: 'Pay',
-    href: 'https://pay.sushi.com',
+    href: '#',
     description:
       'Stream or create a vesting schedule with any ERC20 to any wallet.',
   },
@@ -83,14 +83,14 @@ export const MORE_NAVIGATION_LINKS: NavigationElementDropdown['items'] = [
 
 export const SUPPORT_NAVIGATION_LINKS: NavigationElementDropdown['items'] = [
   {
-    title: 'Sushi Academy',
+    title: 'BLINK Academy',
     href: '/academy',
     description: 'Everything you need to get up to speed with DeFi.',
   },
   {
     title: 'FAQ',
     href: '/faq',
-    description: 'Answers to the most common questions about Sushi.',
+    description: 'Answers to the most common questions about BLINK.',
   },
   {
     title: 'Privacy Policy',
@@ -100,7 +100,7 @@ export const SUPPORT_NAVIGATION_LINKS: NavigationElementDropdown['items'] = [
   {
     title: 'Terms of Service',
     href: '/legal/terms-of-service',
-    description: 'Our terms and conditions for using Sushi.',
+    description: 'Our terms and conditions for using BLINK.',
   },
 ]
 
@@ -169,21 +169,21 @@ export const headerElements = ({
                     Socials
                   </span>
                   <div className="flex gap-5 items-center">
-                    <LinkExternal href={'https://sushi.com/github'}>
+                    <LinkExternal href={'https://github.com/harutk7/blink.exchange'}>
                       <GithubIcon
                         width={18}
                         height={18}
                         className="text-muted-foreground hover:text-accent-foreground focus:text-accent-foreground"
                       />
                     </LinkExternal>
-                    <LinkExternal href={'https://sushi.com/discord'}>
+                    <LinkExternal href={'#'}>
                       <DiscordIcon
                         width={18}
                         height={18}
                         className="text-muted-foreground hover:text-accent-foreground focus:text-accent-foreground"
                       />
                     </LinkExternal>
-                    <LinkExternal href={'https://sushi.com/twitter'}>
+                    <LinkExternal href={'#'}>
                       <XIcon
                         width={18}
                         height={18}

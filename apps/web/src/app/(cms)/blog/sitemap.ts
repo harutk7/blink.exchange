@@ -11,14 +11,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     return [
       {
-        url: 'https://www.sushi.com/blog',
+        url: 'https://blink-exchange.apps.levarqo.com/blog',
         lastModified: new Date(),
         changeFrequency: 'daily',
       },
       ...articles.map(
         (article) =>
           ({
-            url: `https://www.sushi.com/blog/${article.slug}`,
+            url: `https://blink-exchange.apps.levarqo.com/blog/${article.slug}`,
             lastModified: new Date(article.updatedAt),
             changeFrequency: 'weekly',
           }) as const,

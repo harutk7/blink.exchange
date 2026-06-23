@@ -178,7 +178,7 @@ export function RefereesCard() {
         <div>
           <h2 className="text-lg font-medium">Referees</h2>
           <p className="text-sm text-perps-muted-50">
-            Wallets linked to your Sushi referral code and their lifetime
+            Wallets linked to your BLINK referral code and their lifetime
             rewards.
           </p>
         </div>

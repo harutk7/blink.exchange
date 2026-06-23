@@ -15,7 +15,7 @@ export const BuildWealth: FC = () => {
               <Image
                 alt="stellar"
                 objectFit="contain"
-                src="https://res.cloudinary.com/sushi-cdn/image/upload/v1668715316/ezgif.com-gif-maker_tyon6k.webp"
+                src="/og-image.png"
                 layout="fill"
               />
             </div>
@@ -40,7 +40,7 @@ export const BuildWealth: FC = () => {
                       <p>
                         A liquidity pool is a place where users can “pool” their
                         assets into, which is used for facilitating trades on an
-                        automated market maker (AMM), such as Sushi.
+                        automated market maker (AMM), such as BLINK.
                       </p>
                       <h3>Decentralized Liquidity</h3>
                       <p>
@@ -61,7 +61,7 @@ export const BuildWealth: FC = () => {
                       </p>
                     </>
                   }
-                  link="https://www.sushi.com/pools"
+                  link="https://blink-exchange.apps.levarqo.com/ethereum/pools"
                   linkText="Visit Earn"
                 />
                 <ExpandableCard
@@ -73,7 +73,7 @@ export const BuildWealth: FC = () => {
                       <p>
                         Yield farms are a way for users to make even more yield
                         for loaning their assets out to an Automated Market
-                        Maker (AMM), such as Sushi.
+                        Maker (AMM), such as BLINK.
                       </p>
                       <h3>Deposit your LP Tokens</h3>
                       <p>
@@ -92,21 +92,21 @@ export const BuildWealth: FC = () => {
                       </p>
                     </>
                   }
-                  link="https://www.sushi.com/pools"
+                  link="https://blink-exchange.apps.levarqo.com/ethereum/pools"
                   linkText="Visit Earn"
                 />
                 <ExpandableCard
                   caption="For Retail Users"
-                  title="Sushi Vault"
+                  title="BLINK Vault"
                   content={
                     <>
                       <h3>
-                        What Is The Sushi Vault? How Does It Earn You Yield?
+                        What Is The BLINK Vault? How Does It Earn You Yield?
                       </h3>
                       <p>
-                        The Sushi Vault (previously known as the BentoBox) is a
+                        The BLINK Vault (previously known as the BentoBox) is a
                         token vault that underlies the entirety of the product
-                        suite at Sushi.
+                        suite at BLINK.
                       </p>
                       <h3>Automatic Yield</h3>
                       <p>
@@ -126,7 +126,7 @@ export const BuildWealth: FC = () => {
                       </p>
                     </>
                   }
-                  link="https://www.sushi.com/pools"
+                  link="https://blink-exchange.apps.levarqo.com/ethereum/pools"
                   linkText="Visit Earn"
                 />
               </div>

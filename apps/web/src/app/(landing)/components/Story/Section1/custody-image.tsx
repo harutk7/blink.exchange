@@ -35,7 +35,7 @@ export const CustodyImage = () => {
       <Image
         alt="stellar"
         objectFit="contain"
-        src="https://res.cloudinary.com/sushi-cdn/image/upload/v1669286681/Phone_1_cajrdn.webp"
+        src="/og-image.png"
         layout="fill"
       />
     </motion.div>

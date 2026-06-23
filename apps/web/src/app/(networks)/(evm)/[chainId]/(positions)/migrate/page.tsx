@@ -7,7 +7,7 @@ import { MigrateTabContent } from './_ui/migrate-tab-content'
 
 export const metadata: Metadata = {
   title: 'Migrate',
-  description: 'A SushiSwap V2 to V3 migration tool.',
+  description: 'A BLINK Exchange V2 to V3 migration tool.',
 }
 
 export default async function MigratePage(props: {

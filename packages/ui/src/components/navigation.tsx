@@ -20,29 +20,29 @@ const COMPANY_NAVIGATION_LINKS: NavigationElementDropdown['items'] = [
     title: 'Blog',
     href: '/blog',
     description:
-      'Stay up to date with the latest product developments at Sushi.',
+      'Stay up to date with the latest product developments at BLINK.',
   },
 ]
 
 const PROTOCOL_NAVIGATION_LINKS: NavigationElementDropdown['items'] = [
   {
     title: 'Forum',
-    href: 'https://forum.sushi.com',
-    description: 'View and discuss proposals for SushiSwap.',
+    href: '#',
+    description: 'View and discuss proposals for BLINK Exchange.',
   },
   {
     title: 'Vote',
-    href: 'https://snapshot.org/#/sushigov.eth',
+    href: 'https://snapshot.org/#/delegate/blinkgov.eth',
     description:
-      'As a Sushi holder, you can vote on proposals to shape the future of SushiSwap.',
+      'As a BLINK holder, you can vote on proposals to shape the future of BLINK Exchange.',
   },
 ]
 
 const PARTNER_NAVIGATION_LINKS: NavigationElementDropdown['items'] = [
   {
-    title: 'Partner with Sushi',
+    title: 'Partner with BLINK',
     href: '/partner',
-    description: 'Incentivize your token with Sushi rewards.',
+    description: 'Incentivize your token with BLINK rewards.',
   },
   {
     title: 'Token Listing',

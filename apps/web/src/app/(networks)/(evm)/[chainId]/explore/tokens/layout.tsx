@@ -10,7 +10,7 @@ import { TokensFiltersProvider } from './_ui/tokens-filters-provider'
 
 export const metadata: Metadata = {
   title: 'Tokens',
-  description: 'Explore SushiSwap tokens.',
+  description: 'Explore BLINK Exchange tokens.',
 }
 
 export default async function ExploreLayout(props: {

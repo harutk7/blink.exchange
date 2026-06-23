@@ -23,7 +23,7 @@ const DATA: ExpendableCardData = {
         them for you), you can never be completely sure your funds are safe.
       </p>
       <p>
-        As a decentralized exchange, Sushi never has control of users’ funds,
+        As a decentralized exchange, BLINK never has control of users’ funds,
         nor will they ever in the future. The decentralized nature of it means
         that we do not rely on a third party or an intermediary account; the
         users are always in full custody of your their tokens, and can exchange
@@ -32,7 +32,7 @@ const DATA: ExpendableCardData = {
       </p>
     </>
   ),
-  link: 'https://www.sushi.com/swap',
+  link: 'https://blink-exchange.apps.levarqo.com/ethereum/swap',
   linkText: 'Visit Swap',
 }
 

@@ -8,7 +8,7 @@ import { positionService } from './position-service'
 import type { AddLiquidityParams } from './swap-service'
 
 /**
- * Main service for SushiSwap operations on Stellar
+ * Main service for BLINK Exchange operations on Stellar
  * This is the primary interface for interacting with the DEX
  */
 export class SushiStellarService {

@@ -46,7 +46,7 @@ const createItems = (chainId: SushiSwapChainId | BladeChainId) => {
         <div className="flex items-center gap-2">
           <span>🍣</span>{' '}
           <span>
-            SushiSwap <sup>v3</sup>
+            BLINK Exchange <sup>v3</sup>
           </span>
         </div>
       ),
@@ -60,7 +60,7 @@ const createItems = (chainId: SushiSwapChainId | BladeChainId) => {
         <div className="flex items-center gap-2">
           <span>🍣</span>{' '}
           <span>
-            SushiSwap <sup>v2</sup>
+            BLINK Exchange <sup>v2</sup>
           </span>
         </div>
       ),

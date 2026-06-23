@@ -26,7 +26,7 @@ export const Partners: FC = () => {
         <div className="flex flex-col items-center text-center prose dark:prose-invert mx-auto">
           <h1>{diff} Days.</h1>
           <h5>
-            Ever since the inception of Sushi, our journey has been enriched by
+            Ever since the inception of BLINK, our journey has been enriched by
             the invaluable connections we{`'`}ve forged. As we pave the way
             towards the Future of Finance, we want to express our deep gratitude
             to the incredible community of friends and supporters who have

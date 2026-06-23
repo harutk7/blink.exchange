@@ -15,7 +15,7 @@ export const Breadcrumb: FC<Breadcrumb> = ({ article }) => {
   const router = useRouter()
 
   const shareText = getShareText(article.title)
-  const url = `https://www.sushi.com/academy/articles/${article.slug}`
+  const url = `https://blink-exchange.apps.levarqo.com/academy/${article.slug}`
 
   const onShare = useCallback(() => {
     if (navigator.share) {

@@ -6,12 +6,12 @@ function Hero() {
     <Container maxWidth="md" className="space-y-14">
       <div className="text-center space-y-8">
         <span className="text-lg font-semibold">
-          Sushi Swap API: Power your D'app to Swap Anything
+          BLINK Swap API: Power your D'app to Swap Anything
         </span>
         <div className="flex justify-center">
           <CloudinaryImage
             alt="hero"
-            src="sushi_developer_portal_hero_image.png"
+            src="/og-image.png"
             width={300}
             height={300}
             quality={100}

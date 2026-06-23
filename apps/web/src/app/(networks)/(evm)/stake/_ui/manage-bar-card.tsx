@@ -23,7 +23,7 @@ export const ManageBarCard = () => {
       <CardHeader>
         <CardTitle>Manage</CardTitle>
         <CardDescription>
-          Manage your position in the Sushi Bar.
+          Manage your position in the BLINK Bar.
         </CardDescription>
       </CardHeader>
       <Tabs

@@ -38,9 +38,9 @@ import { useAccount } from 'src/lib/wallet'
 import { TableButton } from '../../_common'
 import { useAssetListState } from '../../asset-selector'
 
-const SHARE_URL = 'https://www.sushi.com/perps'
+const SHARE_URL = 'https://blink-landing.apps.levarqo.com/perps'
 const getInviteUrl = (referralCode: string) =>
-  `https://www.sushi.com/perps/invite/${referralCode.toUpperCase()}`
+  `https://blink-landing.apps.levarqo.com/perps/invite/${referralCode.toUpperCase()}`
 
 export type AnyTradeType =
   | TradeHistoryItemType
@@ -492,7 +492,7 @@ function getDefaultShareText(
   trade: NormalizedTrade,
   referralCode?: string,
 ): string {
-  const baseText = `Trade $${trade.symbol} perps on @SushiSwap`
+  const baseText = `Trade $${trade.symbol} perps on @BLINK Exchange`
 
   return referralCode
     ? `${baseText} using my referral code ${referralCode}`
@@ -540,7 +540,7 @@ function getSushiIconImage(): Promise<HTMLImageElement> {
       const image = new Image()
       image.onload = () => resolve(image)
       image.onerror = () => reject(new Error('Image failed to load'))
-      image.src = '/sushi-labs-white-icon.svg'
+      image.src = '/icon-512x512.svg'
     })
   }
 
@@ -781,7 +781,7 @@ function drawPosterBrand(
   context.fillStyle = '#FFFFFF'
   context.font = '700 76px Inter, sans-serif'
   context.textBaseline = 'middle'
-  context.fillText('Sushi', 182, 1298)
+  context.fillText('BLINK', 182, 1298)
   context.restore()
 }
 

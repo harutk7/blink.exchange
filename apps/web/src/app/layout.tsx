@@ -2,11 +2,12 @@ import '@sushiswap/ui/index.css'
 
 import { ToastContainer } from '@sushiswap/notifications'
 import type { Metadata } from 'next'
-import { Inter, Roboto_Mono } from 'next/font/google'
-import localFont from 'next/font/local'
+import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google'
 import type React from 'react'
 import { Trackers } from './trackers'
 import { UtilityButtons } from './utility-buttons'
+
+import './globals.css'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -14,16 +15,16 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-const roboto_mono = Roboto_Mono({
+const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-roboto-mono',
+  variable: '--font-space-grotesk',
 })
 
-const lufga = localFont({
-  src: '../../public/fonts/LufgaRegular.ttf',
-  variable: '--font-lufga',
+const jetbrains_mono = JetBrains_Mono({
+  subsets: ['latin'],
   display: 'swap',
+  variable: '--font-jetbrains-mono',
 })
 
 export const metadata: Metadata = {
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: 'https://cdn.sushi.com/image/upload/v1731498183/sushi-assets/embed-web-visuals/default.jpg',
+        url: '/og-image.png',
         width: 1920,
         height: 1080,
         alt: 'BLINK Exchange',
@@ -61,7 +62,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${roboto_mono.variable} ${lufga.variable} dark`}
+      className={`${inter.variable} ${space_grotesk.variable} ${jetbrains_mono.variable} dark`}
       suppressHydrationWarning
     >
       <head>
@@ -69,9 +70,9 @@ export default function RootLayout({
         <link
           rel="mask-icon"
           href="/safari-pinned-tab.svg?v=1"
-          color="#fa52a0"
+          color="#00D9FF"
         />
-        <link rel="shortcut icon" href="/favicon.ico?v=1" />
+        <link rel="shortcut icon" href="/favicon-32x32.png?v=1" />
       </head>
       <body className="min-h-screen flex flex-col">
         <ToastContainer />

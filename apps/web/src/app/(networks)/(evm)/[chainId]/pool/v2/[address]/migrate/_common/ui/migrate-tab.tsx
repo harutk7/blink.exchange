@@ -493,7 +493,7 @@ export const MigrateTab: FC<{ pool: RawV2Pool }> = withCheckerRoot(
                 ) : null}
                 {largePriceDifference ? (
                   <Message variant="warning" size="sm">
-                    You should only deposit liquidity into SushiSwap V3 at a
+                    You should only deposit liquidity into BLINK Exchange V3 at a
                     price you believe is correct. <br />
                     If the price seems incorrect, you can either make a swap to
                     move the price or wait for someone else to do so.
@@ -637,7 +637,7 @@ export const MigrateTab: FC<{ pool: RawV2Pool }> = withCheckerRoot(
                                         </div>
                                         <DialogDescription>
                                           {token0?.symbol}/{token1?.symbol} •
-                                          SushiSwap V3 • {feeAmount / 10000}%
+                                          BLINK Exchange V3 • {feeAmount / 10000}%
                                         </DialogDescription>
                                       </DialogHeader>
                                       <div className="flex flex-col gap-4">

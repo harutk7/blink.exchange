@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0a0b14;
+    --background-color: #0a0b14;
+    --color: #ffffff;
+    --primary: #00d9ff;
+    --secondary: #12131f;
+    --muted: #1a1b2e;
+    --muted-foreground: #a0a3b8;
+    --accent: #1a1b2e;
+    --accent-foreground: #ffffff;
+    --green: 0 255 136;
+    --red: 255 59 92;
+    --yellow: #ffb800;
+  }
+
+  .dark {
+    --background: #0a0b14;
+    --background-color: #0a0b14;
+    --color: #ffffff;
+    --primary: #00d9ff;
+    --secondary: #12131f;
+    --muted: #1a1b2e;
+    --muted-foreground: #a0a3b8;
+    --accent: #1a1b2e;
+    --accent-foreground: #ffffff;
+    --green: 0 255 136;
+    --red: 255 59 92;
+    --yellow: #ffb800;
+  }
+
+  html {
+    background-color: var(--background-color) !important;
+  }
+
+  body {
+    color: var(--color);
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-space-grotesk), var(--font-inter), ui-sans-serif, system-ui,
+      sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, #00d9ff 0%, #7b2fbe 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glass {
+    background: rgba(18, 19, 31, 0.7);
+    backdrop-filter: blur(12px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 24px rgba(0, 217, 255, 0.35), 0 0 8px rgba(0, 217, 255, 0.2);
+  }
+
+  .btn-gradient {
+    background: linear-gradient(135deg, #00d9ff 0%, #7b2fbe 100%);
+    color: #ffffff;
+    transition: all 0.2s ease;
+  }
+
+  .btn-gradient:hover {
+    filter: brightness(1.15);
+    box-shadow: 0 0 28px rgba(0, 217, 255, 0.45);
+  }
+
+  .bg-sushi-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 217, 255, 0.25) 0%,
+      rgba(123, 47, 190, 0.25) 100%
+    ) !important;
+  }
+
+  .bg-sushi-gradient:hover {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 217, 255, 0.35) 0%,
+      rgba(123, 47, 190, 0.35) 100%
+    ) !important;
+  }
+
+  .bg-sushi-gradient-full-opacity {
+    background: linear-gradient(135deg, #00d9ff 0%, #7b2fbe 100%) !important;
+  }
+
+  .border-sushi-gradient::before {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 217, 255, 0.8) 0%,
+      rgba(123, 47, 190, 0.8) 100%
+    ) !important;
+  }
+}

@@ -44,7 +44,7 @@ export async function Header() {
           },
           {
             title: 'Docs',
-            href: 'https://docs.sushi.com/developer-portal',
+            href: 'https://blink-landing.apps.levarqo.com/developer-portal',
             show: 'everywhere',
             type: NavigationElementType.Single,
           },

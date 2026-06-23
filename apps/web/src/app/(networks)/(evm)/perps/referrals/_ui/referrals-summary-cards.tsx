@@ -92,7 +92,7 @@ export function ReferralsSummaryCards() {
 
   const primaryCode = overview.data?.primaryReferralCode?.code
   const shareLink = primaryCode
-    ? `https://sushi.com/perps/invite/${primaryCode}`
+    ? `https://blink-exchange.apps.levarqo.com/perps/invite/${primaryCode}`
     : undefined
 
   const claimableRewardsValue = useMemo(() => {

@@ -115,7 +115,7 @@ function getLiquidityToken(
   return {
     address: getAddress(tokenA, tokenB, network),
     decimals: 8,
-    symbol: 'Sushi-LP',
+    symbol: 'BLINK-LP',
     name: `sushi-${token0.symbol}-${token1.symbol}-LP`,
   }
 }

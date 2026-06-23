@@ -34,13 +34,13 @@ const STEPS = [
     label: 'Step 3',
     title: 'Establish Farm',
     description:
-      'If your project successfully passes the due diligence process, Sushi will offer incentives to the LP farm associated with your project by providing $SUSHI tokens as dual incentives on top of single incentives provided by your project. The size of the $SUSHI reward will be determined based on the trading volume of the pool.',
+      'If your project successfully passes the due diligence process, BLINK will offer incentives to the LP farm associated with your project by providing $BLINK tokens as dual incentives on top of single incentives provided by your project. The size of the $BLINK reward will be determined based on the trading volume of the pool.',
   },
   {
     label: 'Step 4',
     title: 'Launch Co-Marketing',
     description:
-      'We will subsequently request branding materials to market the farm (Sushi’s Twitter, Blog etc.), and simultaneously launch the incentives for the farm.',
+      'We will subsequently request branding materials to market the farm (BLINK’s Twitter, Blog etc.), and simultaneously launch the incentives for the farm.',
   },
 ]
 
@@ -51,7 +51,7 @@ export default async function PartnerPage() {
         <div className="flex flex-col justify-center pt-20">
           <div className="flex flex-col">
             <h1 className={typographyVariants({ variant: 'h1' })}>
-              Partner <br /> with Sushi
+              Partner <br /> with BLINK
             </h1>
             <p className={typographyVariants({ variant: 'lead' })}>
               Unlock new possibilities by partnering with us! We are excited to
@@ -71,11 +71,11 @@ export default async function PartnerPage() {
                 <h2>Boost your liquidity pool ✨</h2>
                 <p>
                   Enhance your liquidity pool{'`'}s performance by tapping into
-                  Sushi{`'`}s rewards system. By joining forces, you gain access
+                  BLINK{`'`}s rewards system. By joining forces, you gain access
                   to an array of incentives that bolster liquidity provision,
                   thereby fostering deeper market engagement and participation.
                   As users provide liquidity to your pool, they receive
-                  additional SUSHI rewards, creating a mutually beneficial
+                  additional BLINK rewards, creating a mutually beneficial
                   ecosystem where both your project and liquidity providers
                   thrive.
                 </p>
@@ -136,7 +136,7 @@ export default async function PartnerPage() {
         </div>
         <div className="flex justify-center pt-10">
           <p className="text-sm text-center text-muted-foreground max-w-xl">
-            After the launch of the farm rewards, Sushi will continue to remain
+            After the launch of the farm rewards, BLINK will continue to remain
             connected with your project and look to further collaborate on any
             opportunity that arises.
           </p>
@@ -170,12 +170,12 @@ export default async function PartnerPage() {
           <div className="w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 justify-between md:gap-10 items-end">
               <div className="w-full">
-                <h2>Sushi collaboration hub.</h2>
+                <h2>BLINK collaboration hub.</h2>
                 <p>
                   Experience the convenience of streamlined communication and
-                  collaboration through our dedicated Sushi Collaboration Hub.
+                  collaboration through our dedicated BLINK Collaboration Hub.
                   Whether you have inquiries, or wish to explore synergies with
-                  other partners in the Sushi network, this hub serves as a
+                  other partners in the BLINK network, this hub serves as a
                   central platform to facilitate meaningful interactions. By
                   joining this vibrant community, you harness the collective
                   wisdom of decentralized finance pioneers, forging connections
@@ -185,18 +185,18 @@ export default async function PartnerPage() {
                 <ul>
                   <li>
                     Your project is in the process of launching a product that
-                    may utilize Sushi.
+                    may utilize BLINK.
                   </li>
                   <li>
                     Your project has already launched a product that leverages
-                    Sushi.
+                    BLINK.
                   </li>
                   <li>
                     Your project is currently leveraging Furo to stream salary
                     or vest tokens and is seeking marketing support.
                   </li>
                   <li>
-                    Your project is currently supplying liquidity on Sushi and
+                    Your project is currently supplying liquidity on BLINK and
                     is seeking additional farm rewards.
                   </li>
                 </ul>

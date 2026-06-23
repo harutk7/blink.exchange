@@ -4,7 +4,7 @@ import { TwapLayout } from '../_ui/twap-layout'
 export const metadata: Metadata = {
   title: 'DCA',
   description:
-    "Dollar-cost average into your favorite tokens with SushiSwap's DCA tool.",
+    "Dollar-cost average into your favorite tokens with BLINK Exchange's DCA tool.",
 }
 
 export default async function SwapDCALayout(props: {

@@ -16,7 +16,7 @@ export function ReferralsPage() {
       <PerpsCard className="flex min-h-[420px] flex-col items-center justify-center gap-4 p-4 text-center">
         <h1 className="text-3xl font-medium">Referrals</h1>
         <p className="max-w-md text-sm text-perps-muted-50">
-          Connect your wallet to create a Sushi referral code, track rewards,
+          Connect your wallet to create a BLINK referral code, track rewards,
           and review your referred traders.
         </p>
         <ConnectButton

@@ -163,7 +163,7 @@ export const VotingPowerProvider: FC<{
     },
   })
 
-  // Users' staked Sushi-ETH SLP
+  // Users' staked BLINK-ETH SLP
   const {
     data: userStakedSLP,
     isInitialLoading: isUserStakedSLPLoading,

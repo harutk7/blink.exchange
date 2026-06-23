@@ -1,4 +1,4 @@
-export const DOCS_URL = 'https://docs.sushi.com/'
+export const DOCS_URL = 'https://blink-landing.apps.levarqo.com/'
 export const DEFAULT_SIDE_PADDING = 'px-6 sm:px-4'
 export const APP_HEADER_HEIGHT = 54
 
@@ -10,4 +10,4 @@ export const SORTING_OPTIONS = [
 ]
 
 export const getShareText = (title: string | undefined) =>
-  title ? `Check out this Sushi article: ${title}` : undefined
+  title ? `Check out this BLINK article: ${title}` : undefined

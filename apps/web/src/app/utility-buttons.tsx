@@ -64,21 +64,21 @@ export const UtilityButtons = () => {
               Socials
             </span>
             <div className="flex gap-5 items-center">
-              <LinkExternal href={'https://sushi.com/github'}>
+              <LinkExternal href={'https://github.com/harutk7/blink.exchange'}>
                 <GithubIcon
                   width={18}
                   height={18}
                   className="text-muted-foreground hover:text-accent-foreground focus:text-accent-foreground"
                 />
               </LinkExternal>
-              <LinkExternal href={'https://sushi.com/discord'}>
+              <LinkExternal href={'#'}>
                 <DiscordIcon
                   width={18}
                   height={18}
                   className="text-muted-foreground hover:text-accent-foreground focus:text-accent-foreground"
                 />
               </LinkExternal>
-              <LinkExternal href={'https://sushi.com/twitter'}>
+              <LinkExternal href={'#'}>
                 <XIcon
                   width={18}
                   height={18}

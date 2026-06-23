@@ -315,7 +315,7 @@ export default function TokenListing() {
       >
         <h1 className="text-4xl font-bold">Community List</h1>
         <p className="text-sm text-muted-foreground">
-          Get your token verified to Sushi&apos;s Community List.
+          Get your token verified to BLINK&apos;s Community List.
         </p>
       </Container>
       <NavigationItems />
